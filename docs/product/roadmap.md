@@ -4,8 +4,8 @@ This is the prioritized work queue, not a product specification. IDs are stable.
 
 | ID | Outcome | Dependencies | Status | Change ID |
 | --- | --- | --- | --- | --- |
-| R-000 | Minimal application shell and test harness | None | done (source scaffold; verification pending) | Baseline |
-| R-001 | Validate scaffold; initialize official OpenSpec agent integrations and record version | R-000 source | ready | Tooling setup |
+| R-000 | Minimal application shell and test harness | None | done (local runtime checks passed) | Baseline |
+| R-001 | Initialize and validate official OpenSpec agent integrations and record version | R-000 source | ready | Tooling setup |
 | R-002 | Clarify and approve product brief and MVP scope | None | blocked: D-001–D-003 | Discovery |
 | R-003 | Approve durable architecture based on product needs | R-002 | blocked | TBD |
 | R-004 | Propose first end-to-end product increment | R-002, R-003 | blocked | TBD |

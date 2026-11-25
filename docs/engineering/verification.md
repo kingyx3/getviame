@@ -22,3 +22,10 @@ Future changes MUST provide requirement IDs mapped to tests or explicit manual v
 - Next eligible action; do not claim a gate ran if it did not.
 
 The initial scaffold is not production-ready. No product, security or deployment acceptance is implied.
+
+## Initial verification record — 2026-11-25
+- Tested source revision: 62afc5f8ec1ee879827b2e9453a42f15c9cb2971.
+- Node v22.16.0: `node --check src/server.mjs && node --test` passed (3 tests, 0 failures). Both local file blob hashes matched the published GitHub files.
+- OpenSpec strict validation: BLOCKED — npm registry DNS unavailable in the execution environment, so the CLI and generated skills could not be installed. Run the README setup steps locally; do not mark this gate passed until it runs.
+- Hosted CI: unconfirmed; no combined statuses returned at inspection time.
+- Independent review: not performed; no product behavior or deployment approved.
