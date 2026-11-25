@@ -1,0 +1,15 @@
+{
+  "name": "getviame",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/server.mjs",
+    "dev": "node --watch src/server.mjs",
+    "test": "node --test",
+    "check": "node --check src/server.mjs && node --test"
+  }
+}
