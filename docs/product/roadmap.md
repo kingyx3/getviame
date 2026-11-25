@@ -1,13 +1,17 @@
-# Roadmap
+# Roadmap — v0.1
 
-This is the prioritized work queue, not a product specification. IDs are stable. Status values: blocked, ready, in-progress, review, done. A change is eligible only when approved, ready and dependencies are done.
+All product changes below are DRAFT / blocked from implementation until human approval of scope and applicable decisions. The proposed dependency graph is not an authorization queue. R-001 remains setup only.
 
-| ID | Outcome | Dependencies | Status | Change ID |
+| ID | Outcome | Dependencies | Status | OpenSpec change |
 | --- | --- | --- | --- | --- |
-| R-000 | Minimal application shell and test harness | None | done (local runtime checks passed) | Baseline |
-| R-001 | Initialize and validate official OpenSpec agent integrations and record version | R-000 source | ready | Tooling setup |
-| R-002 | Clarify and approve product brief and MVP scope | None | blocked: D-001–D-003 | Discovery |
-| R-003 | Approve durable architecture based on product needs | R-002 | blocked | TBD |
-| R-004 | Propose first end-to-end product increment | R-002, R-003 | blocked | TBD |
+| R-000 | Minimal application scaffold | None | done (local runtime checks previously recorded) | Baseline |
+| R-001 | Initialize official OpenSpec integrations and validate specs | R-000 | ready (setup only) | Tooling setup |
+| R-002 | Confirm MVP decisions and approve spec revision | None | review | Product v0.1 |
+| R-003 | Environment, auth, operational and metrics foundation | R-001, R-002 | blocked | establish-marketplace-foundation |
+| R-004 | Catalogue, request publication and policy moderation | R-003 | blocked | enable-product-requests |
+| R-005 | Browse, manual trips, estimates and offer acceptance | R-004 | blocked | enable-trip-matching |
+| R-006 | Fund order, receipt, handover, dispute, settlement, reviews | R-005; D-006–D-012 | blocked | complete-marketplace-transaction |
+| R-007 | Country discovery, demand replication, referrals/comms | R-004; referral requires R-006 | blocked | grow-marketplace |
+| R-008 | Courier, itinerary import, food, regional expansion, cash points | R-006 and relevant compliance/partner approval | blocked | explore-marketplace-expansion |
 
-R-001 is authorized by the request for an OpenSpec scaffold; it does not authorize product implementation. R-002 can proceed via human clarification in parallel. When the user approves MVP direction, replace placeholders with ordered vertical changes and record acceptance criteria, dependency IDs and approved change revisions.
+Pilot MVP is proposed as R-003–R-006; R-007 is early growth, with welcome comms in R-003. Split changes into independently reviewable vertical increments before implementation when dependencies and contracts are agreed. Promote one reviewed change at a time; do not start blocked money/compliance features. No product implementation authorized by this specification-only request.

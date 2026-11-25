@@ -1,32 +1,24 @@
 schema: spec-driven
-
 context: |
-  Product: GetViaMe. Product purpose, audience and business rules are not yet defined.
-  Read AGENTS.md and docs/product/brief.md before proposing work.
-  Do not treat unapproved hypotheses as requirements.
-  Current implementation: minimal Node.js 22+ web shell with no runtime dependencies.
-  Current commands: npm start, npm test, npm run check.
-  The permanent architecture is undecided; see docs/engineering/architecture.md.
-  Current accepted behavior lives in openspec/specs/.
-  New behavior belongs in active change deltas until verified and accepted.
-  Repository is public; never include secrets or personal/customer data.
-
+  GetViaMe is a cross-border traveller-powered shopping marketplace.
+  Read AGENTS.md, docs/product/brief.md, decisions.md, roadmap.md, domain-model.md and metrics.md (under docs/product), and docs/engineering/architecture.md.
+  Owner preferences: Google-only auth; GCP; Stripe Connect/PayNow; 8% fee; seven-day dispute window; environment-specific GitHub Actions.
+  Detailed requirements remain draft until reviewed and approved. No product feature implementation authorized by v0.1.
+  Existing app: minimal Node HTTP shell. npm start, npm test, npm run check.
+  Current accepted behavior: openspec/specs/. Proposed changes: openspec/changes/.
+  Public repository: no credentials, raw receipts, PII or confidential operational details.
 rules:
   proposal:
-    - State objective, user value, non-goals, affected capabilities and dependencies.
-    - Identify material unresolved decisions and distinguish assumptions from approved facts.
-    - Keep the change small enough to deliver and verify independently.
+    - State user outcome, dependencies, non-goals, affected capabilities and decision IDs.
+    - Label unresolved decisions and block implementation where material.
   specs:
-    - Use stable requirement IDs and observable SHALL statements.
-    - Use explicit WHEN and THEN scenarios; include GIVEN context where useful.
-    - Cover relevant failure, authorization and boundary cases.
-    - Do not modify approved behavior without explicit scope approval.
+    - Use stable requirement IDs, observable SHALL statements and WHEN/THEN scenarios.
+    - Cover authorization, race conditions, retries, refunds and negative cases as relevant.
+    - Never assume legal or provider approval, and do not conflate product, request, order and money states.
   design:
-    - Explain affected interfaces, data, risks, alternatives and rollback where applicable.
-    - Preserve existing architecture unless a material decision is approved.
-    - Define the verification approach and requirement-to-test traceability.
+    - Specify state transitions, interfaces, data provenance, currency/rounding, risk and rollback.
+    - Include verification and metrics with privacy boundaries.
   tasks:
-    - Use ordered, bounded, independently verifiable checkboxes.
-    - Include implementation, acceptance tests, integration and regression checks.
-    - Include strict OpenSpec validation and relevant runtime quality gates.
-    - Include independent review, evidence and archival readiness checks.
+    - Include approval and compliance gates before implementation.
+    - Use bounded tasks, requirement-to-test mapping, independent verification and archival readiness.
+    - Never mark completed or archive based on draft specs alone.
