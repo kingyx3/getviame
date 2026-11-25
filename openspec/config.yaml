@@ -1,0 +1,32 @@
+schema: spec-driven
+
+context: |
+  Product: GetViaMe. Product purpose, audience and business rules are not yet defined.
+  Read AGENTS.md and docs/product/brief.md before proposing work.
+  Do not treat unapproved hypotheses as requirements.
+  Current implementation: minimal Node.js 22+ web shell with no runtime dependencies.
+  Current commands: npm start, npm test, npm run check.
+  The permanent architecture is undecided; see docs/engineering/architecture.md.
+  Current accepted behavior lives in openspec/specs/.
+  New behavior belongs in active change deltas until verified and accepted.
+  Repository is public; never include secrets or personal/customer data.
+
+rules:
+  proposal:
+    - State objective, user value, non-goals, affected capabilities and dependencies.
+    - Identify material unresolved decisions and distinguish assumptions from approved facts.
+    - Keep the change small enough to deliver and verify independently.
+  specs:
+    - Use stable requirement IDs and observable SHALL statements.
+    - Use explicit WHEN and THEN scenarios; include GIVEN context where useful.
+    - Cover relevant failure, authorization and boundary cases.
+    - Do not modify approved behavior without explicit scope approval.
+  design:
+    - Explain affected interfaces, data, risks, alternatives and rollback where applicable.
+    - Preserve existing architecture unless a material decision is approved.
+    - Define the verification approach and requirement-to-test traceability.
+  tasks:
+    - Use ordered, bounded, independently verifiable checkboxes.
+    - Include implementation, acceptance tests, integration and regression checks.
+    - Include strict OpenSpec validation and relevant runtime quality gates.
+    - Include independent review, evidence and archival readiness checks.
