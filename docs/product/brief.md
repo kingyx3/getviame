@@ -1,22 +1,16 @@
-# GetViaMe product brief v0.1
+# GetViaMe product brief v0.2
 
-Status: product direction supplied by owner on 2026-11-25; detailed requirements proposed for review. No authorization to implement features yet.
+Owner direction confirmed 2026-11-26 via the 60-question review; this remains specification-only, not authorization to implement or launch.
 
-## Vision
-Cross-border marketplace connecting shoppers seeking overseas products (especially region-exclusive items) to travellers who can buy and deliver them. Frequent travellers, air crew, business travellers and holidaymakers can monetise existing journeys. Adapt useful Airfrov patterns without assuming its historical policies are valid today.
+## Vision and priorities
+Cross-border traveller-powered marketplace; Singapore-based frequent travellers, air crew and round trips returning to Singapore are initial focus, with global sourcing and future global corridor support. Priorities: overseas product accessibility > discovery > traveller supplementary income > price savings.
 
-## Core journeys
-1. Shopper searches or creates a product, attaches images/details, source country/region and retailer/location hints. Automated sanity checks (deterministic rules plus optional APIs/AI) assess quality and policy eligibility. Product-specific information is reused independently of requests. Shopper specifies quantity, willingness to pay, destination, ideal delivery dates and minimum acceptable expiry for food where legally enabled.
-2. Traveller browses requests or adds trip details for matching. Sees agreed potential receipt in home currency, 8% fee and FX breakdown, reference MSRP and estimated earnings accounting for purchase costs and tax uncertainty. Proposes fulfilment/return dates; shopper accepts.
-3. Recommended (pending D-006–D-010): funded order before traveller buys; receipt uploaded; agreed meetup or delivery; verified handover opens seven-day dispute window. Settlement only after expiry and no unresolved dispute; refund exceptions and provider rules apply.
-4. Both parties exchange verified transaction reviews after success.
-5. Discovery by country, “I want this too” repeat demand; referral and welcome comms. Longer-term: cash-redeemable/spendable points and itinerary integrations such as Wanderlog, including outbound and return opportunities.
-
-## Owner-stated preferences
-Google-only authentication; GCP; Stripe Connect and PayNow; 8% fee of price paid intended to cover processor fees; GitHub Actions deploying dev/stg/prod on merge to corresponding branches. Environment configuration via .env.dev/.env.stg/.env.prod (non-secret only); environment-scoped GitHub secrets. Referral $10 equivalent each, referrer rewarded after referee's first completed transaction, max five qualifying referees per referrer; referee trigger/conditions unresolved. Seven days from delivery/meetup for disputes, then traveller credited and ordinary refunds closed (subject to applicable law and exceptions). Receipt-derived retail prices private to platform until approved otherwise. Metrics available to agents for continuous improvement.
-
-## Proposed initial scope, not approval
-Singapore-first destination/payment/settlement, SGD, responsive web, one account for both roles, one traveller per order, non-food lawful goods, manual trip entry, mutual meetup confirmation, provider-managed funds, operations review queue. No internal cash wallet, food sale, delivery provider integration, itinerary partner integration, or global payout rollout until respective gates clear. Country featured discovery, demand cloning, referral and comms can follow core transaction pilot.
-
-## Outcomes
-Increase completed legitimate orders per active marketplace cohort, match speed and repeat usage while guarding dispute rates, fraud, settlement accuracy and contribution margin. No targets until pilot baseline. See metrics.md, decisions.md and roadmap.md.
+## Confirmed MVP
+Installable responsive PWA, Google-only auth, age 18+, dual roles per account, payment-provider KYC for travellers. Singapore destination, SGD contracts/payment/transfer/payout only, no Stripe FX. Configurable legally permitted categories; food disabled until clearance. Permanent searchable parent-product/variant catalogue; user-confirmed enrichment from images, URLs, permitted APIs and AI, with sparse data supported. Shopper chooses price and delivery deadline; one variant/full quantity per request, minimum total S$10, individual units may be cheaper. MSRP and earnings indicative only, optional and never price constraints. Progressively learn from shopper inputs, public references and private receipts.
+Traveller freely browses or enters origin/destination/dates (optional city/airport); no capacity input. Group similar jobs but keep orders separate. Multiple offers/counteroffers; shopper chooses. Traveller bears all lawful import GST, duties and purchasing costs, acknowledges terms before acceptance, retains savings; reprice only with shopper agreement or cancel.
+8% inclusive fee; fund after offer acceptance before purchase; traveller fronts retail cost. Platform SGD wallet/balance desired, exact custody model gated. Cash earnings and promotional credits separate; eventual unified spending subject to clearance. 
+Meetup; traveller reports actual delivery, shopper confirms, reminders and auto-confirm after 7 days of silence. Keep seven-day dispute period and no early settlement; proposed concurrent timer and evidence exceptions require confirmation. AI recommends dispute resolutions, humans approve financial decisions. Shopper cancellation free before purchase; after purchase mutual consent/dispute, possible disclosed penalty pending details. Traveller cancellation reopens job and tracks cancellation rate; refund/re-funding mechanism to confirm.
+Mandatory private receipts with reviewed exception; uploader/staff access, price intelligence private. Verified star/text reviews blind until both submit or deadline; reputation indicators and in-app messaging.
+Ranked country featured products, admin override; I want this too clones independent requests first, bookmarks and collective purchasing eventually. S$10 spend-only referee credit at registration; S$10 referrer credit after first qualifying completed transaction, capped at five; configurable threshold, 180-day expiry, fraud controls. Manual trips first, opt-in travel planner integration later.
+## Engineering
+GCP Singapore; GitHub Actions feature PRs to dev, promotions dev → stg → prod; human production approval; .env.dev/.env.stg/.env.prod non-secret config, environment secrets. Stack delegated, aggregate initial infrastructure under S$50/month target. Agents perform approved routine engineering and operational work autonomously with sanitized observability, propose metric-backed improvements; no unilateral financial/legal decisions or production promotion.

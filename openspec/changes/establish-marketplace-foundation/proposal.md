@@ -1,12 +1,12 @@
 # Establish marketplace foundation
 
-Status: DRAFT / NOT APPROVED FOR IMPLEMENTATION.
+Status: DRAFT / NOT APPROVED FOR IMPLEMENTATION. Owner direction v0.2, remaining gates in docs/product/decisions.md.
 
 ## Why
-Establish marketplace foundation supports GetViaMe's marketplace direction.
+Establish marketplace foundation supports the marketplace direction.
 
 ## Scope and dependencies
-R-001/002; D-018–D-020. Environment configuration, Google identity, admin controls, welcome comms and read-only metric foundations; no live provisioning yet.
+R-001/002; D-005/018–021. PWA, auth, environments, cost and operational observability; no live provisioning.
 
 ## Capabilities
 ### New Capabilities
@@ -17,4 +17,4 @@ R-001/002; D-018–D-020. Environment configuration, Google identity, admin cont
 None.
 
 ## Impact
-Proposed behavior only; existing application foundation unchanged. Review decisions in docs/product/decisions.md. No production changes, integrations, spending or implementation authorized.
+Proposed behavior only. Existing application unchanged. No live provisioning or product implementation authorized.

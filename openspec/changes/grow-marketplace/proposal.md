@@ -1,12 +1,12 @@
 # Grow demand, discovery and referrals
 
-Status: DRAFT / NOT APPROVED FOR IMPLEMENTATION.
+Status: DRAFT / NOT APPROVED FOR IMPLEMENTATION. Owner direction v0.2, remaining gates in docs/product/decisions.md.
 
 ## Why
-Grow demand, discovery and referrals supports GetViaMe's marketplace direction.
+Grow demand, discovery and referrals supports the marketplace direction.
 
 ## Scope and dependencies
-R-004; referrals depend on R-006. D-014/016. Promotional credit subject to legal review; no cash redemption.
+R-004; registration credit requires policy; referrer grant depends R-006. D-014/016.
 
 ## Capabilities
 ### New Capabilities
@@ -16,4 +16,4 @@ R-004; referrals depend on R-006. D-014/016. Promotional credit subject to legal
 None.
 
 ## Impact
-Proposed behavior only; existing application foundation unchanged. Review decisions in docs/product/decisions.md. No production changes, integrations, spending or implementation authorized.
+Proposed behavior only. Existing application unchanged. No live provisioning or product implementation authorized.

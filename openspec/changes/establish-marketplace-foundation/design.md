@@ -1,5 +1,5 @@
 # Design — Establish marketplace foundation
 
-Draft; decisions not approved. Refer to domain-model.md, architecture.md, metrics.md and decision register.
+Draft, v0.2; see domain-model.md, architecture.md, agent-operations.md, metrics.md and decision register.
 
-Use Google OIDC subject as stable identity; verified server-side token/session, explicit operator role and least privilege. Google auth is not payment KYC. Environment branch mapping and isolated resources per architecture. Welcome email via durable outbox, deduplicated. Metrics event contract in metrics.md. Proposed stack is not approved.
+Next.js TypeScript PWA, Google OIDC server sessions with stable issuer/subject, 18+ eligibility, dual roles and operator RBAC; provider KYC separate. Firestore Standard + Cloud Run scale-to-zero, Terraform, emulator, isolated projects; budget gate under S$50 total. Welcome via deduplicated outbox. Agent read-only sanitized operational interfaces, approved nonprod actions, no raw PII or prod mutations. Branch promotion per architecture.

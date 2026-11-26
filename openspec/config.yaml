@@ -1,24 +1,21 @@
 schema: spec-driven
 context: |
-  GetViaMe is a cross-border traveller-powered shopping marketplace.
-  Read AGENTS.md, docs/product/brief.md, decisions.md, roadmap.md, domain-model.md and metrics.md (under docs/product), and docs/engineering/architecture.md.
-  Owner preferences: Google-only auth; GCP; Stripe Connect/PayNow; 8% fee; seven-day dispute window; environment-specific GitHub Actions.
-  Detailed requirements remain draft until reviewed and approved. No product feature implementation authorized by v0.1.
-  Existing app: minimal Node HTTP shell. npm start, npm test, npm run check.
-  Current accepted behavior: openspec/specs/. Proposed changes: openspec/changes/.
-  Public repository: no credentials, raw receipts, PII or confidential operational details.
+  GetViaMe: cross-border traveller-powered shopping marketplace, Singapore-first, worldwide sourcing, future global corridors.
+  Read AGENTS.md, docs/product/brief.md, owner-answers-v0.2.md, decisions.md, roadmap.md, domain-model.md, metrics.md (under docs/product), docs/engineering/architecture.md and agent-operations.md.
+  Google-only auth, PWA, GCP Singapore, dev/stg/prod GHA, aggregate initial infrastructure under S$50/month.
+  Inclusive 8%, S$10 minimum total job, SGD-only contract/payment/payout, no Stripe FX, MSRP optional and indicative.
+  Seven-day dispute/confirmation policy; exact clock, custody, cancellation and referral conditions gated.
+  Detailed specs remain draft; no feature implementation authorized by v0.2.
+  Existing minimal Node HTTP shell: npm start, npm test, npm run check.
+  Current behavior openspec/specs/; proposed changes openspec/changes/. Public repo: no PII, secrets or receipts.
 rules:
   proposal:
-    - State user outcome, dependencies, non-goals, affected capabilities and decision IDs.
-    - Label unresolved decisions and block implementation where material.
+    - State outcome, dependencies, non-goals, affected capabilities and decision IDs.
+    - Block material unresolved decisions and external clearance.
   specs:
-    - Use stable requirement IDs, observable SHALL statements and WHEN/THEN scenarios.
-    - Cover authorization, race conditions, retries, refunds and negative cases as relevant.
-    - Never assume legal or provider approval, and do not conflate product, request, order and money states.
+    - Stable requirement IDs, observable SHALL and WHEN/THEN; negative, boundary and concurrency cases.
+    - Do not conflate catalogue, request, order and money states; no mandatory MSRP or provider FX.
   design:
-    - Specify state transitions, interfaces, data provenance, currency/rounding, risk and rollback.
-    - Include verification and metrics with privacy boundaries.
+    - State transitions, provenance, currency and rounding, rollback, cost and privacy; agent-operable evidence.
   tasks:
-    - Include approval and compliance gates before implementation.
-    - Use bounded tasks, requirement-to-test mapping, independent verification and archival readiness.
-    - Never mark completed or archive based on draft specs alone.
+    - Approval/compliance gates before implementation; bounded tasks, test mapping, independent verification and archival readiness.

@@ -1,19 +1,26 @@
 ## ADDED Requirements
 
 ### Requirement: TRIP-001 Browse and add trips
-The system SHALL allow travellers to browse open jobs without adding a trip and optionally record trip country/region, origin, destination and dates.
+The system SHALL permit free browsing and optional origin/destinations/dates, city/airport; no capacity input.
 
 #### Scenario: No itinerary
-- **WHEN** a traveller browses without trip details
-- **THEN** eligible open jobs are visible
+- **WHEN** traveller browses without trip
+- **THEN** eligible jobs visible
 
-#### Scenario: Trip supplied
-- **WHEN** a traveller adds dates and destinations
-- **THEN** eligible jobs can be filtered by location and delivery compatibility
+#### Scenario: Trip
+- **WHEN** traveller adds routes/dates
+- **THEN** eligible jobs filtered by compatibility
 
 ### Requirement: TRIP-002 Explain matching
-The system SHALL show why a job matches and not expose private itinerary details to other users without authorization.
+The system SHALL show why jobs match without revealing private itinerary.
 
-#### Scenario: Incompatible request
-- **WHEN** a request cannot meet supplied route/date constraints
-- **THEN** it is excluded from recommended matches
+#### Scenario: Incompatible
+- **WHEN** request cannot meet route/date
+- **THEN** excluded from recommendations
+
+### Requirement: TRIP-003 Group opportunities
+The system SHALL recommend grouped purchases with independent orders.
+
+#### Scenario: Similar jobs
+- **WHEN** several requests match one product/trip
+- **THEN** traveller can consider them together without combined payment

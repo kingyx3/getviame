@@ -1,12 +1,12 @@
 # Complete funded marketplace transaction
 
-Status: DRAFT / NOT APPROVED FOR IMPLEMENTATION.
+Status: DRAFT / NOT APPROVED FOR IMPLEMENTATION. Owner direction v0.2, remaining gates in docs/product/decisions.md.
 
 ## Why
-Complete funded marketplace transaction supports GetViaMe's marketplace direction.
+Complete funded marketplace transaction supports the marketplace direction.
 
 ## Scope and dependencies
-R-005; D-006–D-012, D-016/020. Provider/legal approval and maximum lead time are mandatory. No cash wallet.
+R-005; D-006–012/013/015/016/020. Provider/legal approval, exact delivery clock, penalties and refund/reopen rules mandatory.
 
 ## Capabilities
 ### New Capabilities
@@ -17,4 +17,4 @@ R-005; D-006–D-012, D-016/020. Provider/legal approval and maximum lead time a
 None.
 
 ## Impact
-Proposed behavior only; existing application foundation unchanged. Review decisions in docs/product/decisions.md. No production changes, integrations, spending or implementation authorized.
+Proposed behavior only. Existing application unchanged. No live provisioning or product implementation authorized.

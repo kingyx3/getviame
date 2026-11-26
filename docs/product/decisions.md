@@ -1,30 +1,28 @@
-# Decision register — v0.1
+# Decision register v0.2
 
-Owner direction 2026-11-25 establishes product purpose, primary journey and preferences below; detailed changes remain DRAFT. Record explicit approval with revision, date and scope before implementation. Recommendations are not approvals.
+Owner answers 2026-11-26 in owner-answers-v0.2.md. Confirmed directions constrain specs; PR remains draft, no implementation approved. External clearance independent.
 
-| ID | Topic | Status | Proposed answer / clarification |
-| --- | --- | --- | --- |
-| D-001 | Purpose / audience | Owner supplied | Overseas shopping via existing travellers; frequent travellers and shoppers |
-| D-002 | Primary journey | Owner supplied | Request → offer with dates → shopper acceptance → handover → 7-day dispute window → settlement → reviews |
-| D-003 | MVP scope | Open | Singapore-first, lawful non-food goods, web, meetup, one traveller per request, no wallet; confirm |
-| D-004 | Launch geography and roles | Open | Singapore destination, SGD shopper payments and SG-eligible traveller payouts; global source locations; any account can be both roles; confirm supported traveller residency |
-| D-005 | Operations and success | Open | Admin-assisted moderation/disputes initially; budget, target traffic, launch corridors and performance SLOs to confirm |
-| D-006 | 8% fee incidence and base | Blocking | Recommend 8% deducted from total agreed item price (S$100 paid → S$92 traveller before cost), vs 8% added to traveller agreed amount (S$108 shopper); clarify delivery/tax treatment, rounding/refunds/fee GST and whether extra fees are ever permitted |
-| D-007 | Funding and contract | Blocking | Full PayNow payment after shopper accepts offer, before purchase; traveller fronts retail cost; define payment timeout, max lead time, stock failure, changed price, cancellation, partial fulfilment |
-| D-008 | Handover | Blocking | Mutual in-app confirmation / one-time code and time-stamped evidence; meetup MVP vs courier; define no-show, refusal, confirmation timeout and disputed delivery clock |
-| D-009 | Dispute/refund rules | Blocking | 7×24 hours from verified delivery timestamp, freeze release on open dispute, operations adjudication; clarify early acceptance, outcomes, fault, fee refund, legal/fraud exceptions and appeals |
-| D-010 | Payment provider and compliance | Blocking | Confirm Stripe Connect charge type, merchant of record, KYC, liable party, funding/transfer timing, provider limits, refund deadline and settlement corridors with Stripe and counsel; no claim of escrow |
-| D-011 | Food / controlled goods | Blocking | Exclude from live MVP until jurisdiction-specific legal import/sale and operational clearance. Clarify permitted categories, importer of record, customs/tax cost allocation, passenger/crew restrictions |
-| D-012 | Product and receipt policy | Open | Separate catalogue/requests; provenance-tagged MSRP; AI suggests not certifies; private originals and extracted prices, authorized staff only (uploader can submit their own evidence); confirm receipt required, redaction, retention, sources and image rights |
-| D-013 | Points and balances | Blocking | Separate provider payout status from promotional credit; defer withdrawable/spendable stored value until written legal/provider clearance. Confirm whether points represent earnings, rebates, purchased funds or all three |
-| D-014 | Referral | Open | $10 SGD-equivalent each, first completed transaction and max 5 qualifying referrals per referrer. Recommend both rewarded after first undisputed settled order; confirm referee trigger, role eligibility, minimum spend, expiry, spend-only/cash and reversals |
-| D-015 | Matching / offer terms | Open | One accepted full-quantity offer, fixed shopper ceiling, editable only before acceptance, deterministic country/date filter; confirm negotiation, counteroffers, partial quantities and multiple products |
-| D-016 | Reviews and messaging | Open | Verified two-way 1–5 star reviews, blind until both submit or deadline; in-app order communication; confirm review deadline, moderation and contact reveal |
-| D-017 | Travel planner integrations | Open | Manual trip first; explicit opt-in itinerary import through permitted APIs only; partner access and both-leg matching later |
-| D-018 | Technical stack | Open | Proposed modular monolith on GCP Cloud Run + PostgreSQL Cloud SQL + Cloud Storage; TypeScript web stack to choose; confirm cost/region |
-| D-019 | Branch and environment topology | Open | Proposed dev integration branch, stg promotion, prod promotion; main documentation baseline until migration; all deployment merges through PR; confirm whether main remains docs-only or becomes default dev |
-| D-020 | Trust / onboarding | Open | Google auth only, provider KYC before accepting funded jobs, age/legal eligibility and terms, admin RBAC, welcome email; confirm age, identity verification and communications provider |
-| E-001 | Temporary runtime | Provisional | Existing Node HTTP scaffold remains unchanged |
-| E-002 | Source control | Owner direction | Specs/code same GitHub repo; environment deployment via GHA. No live deployment authorized yet |
+| ID | Status | Resolution / remaining question |
+| --- | --- | --- |
+| D-001/002 | Confirmed | Marketplace; accessibility > discovery > earnings > savings |
+| D-003/004 | Confirmed | Singapore destination, SGD only, eligible travellers primarily SG round trips, PWA, both roles, one variant/full quantity, global extensibility |
+| D-005 | Partial | AI-assisted admin and metrics, infrastructure < S$50/month; traffic/SLO and cost scope open |
+| D-006 | Confirmed / details open | Inclusive 8% of agreed total, S$10 minimum job, traveller bears all costs; fee rounding/GST/refund treatment open; estimates nonbinding |
+| D-007 | Partial | Fund after acceptance before purchase; traveller fronts cost; reprice by consent; free shopper cancel before purchase, after purchase consent/dispute and possible disclosed penalty. Payment timeout, max lead time, purchase proof boundary, penalty amount/triggers and revised funding open |
+| D-008/009 | Partial BLOCK | Meetup, traveller reports actual delivery, shopper confirms, reminders, auto-confirm after 7 silent days, no early release, disputes block settlement, AI recommendation/human financial approval. Proposed single concurrent 7-day clock from eligible delivery report, confirmation does not restart. Confirm clock vs separate 7 days, evidence, reminder cadence, deadline equality, exceptions/appeal |
+| D-010 | External BLOCK | Stripe/counsel confirm SGD custody, charge type, MoR, KYC, liability, timing, refund horizon, payout eligibility/no FX; no escrow claim |
+| D-011 | External BLOCK | Food gated; configurable eligible categories/corridors. Traveller bears lawful import costs and declares as required; importer of record, restrictions/crew eligibility need clearance |
+| D-012 | Confirmed / details open | Sparse searchable parent/variant catalogue, user confirmed enrichment; MSRP optional/nonbinding, receipt mandatory reviewed exception; uploader/staff access, private extracted prices; retention and source rights open |
+| D-013 | Partial BLOCK | Owner wants platform SGD wallet at launch, separate earnings/rewards. Proposed licensed provider SGD balance + non-spendable internal obligations ledger; clarify treasury/provider balance vs customer stored value. No live cash wallet/redemption/spendable earnings without clearance |
+| D-014 | Partial | S$10 spend-only referee credit registration, referrer S$10 first qualifying completed transaction, max 5, expiry 180 days; configurable threshold. Confirm initial threshold, minimum cash co-pay, eligibility/fraud/reversals and credit classification |
+| D-015 | Partial | Multiple offers/counteroffers, shopper chooses, full quantity, one active order, grouped opportunities independent, no capacity. Traveller cancel reopens and tracks rate; propose refund original then fresh offer/funding, no silent reassignment/reuse of funds; confirm |
+| D-016 | Confirmed / details open | Blind stars/text, in-app messaging, six reputation signals with minimum sample; deadline/thresholds/moderation open |
+| D-017 | Confirmed | Manual trips, opt-in permitted partner import later including both directions |
+| D-018 | Delegated | Cost-first GCP Singapore serverless PWA, Firestore instead of fixed Cloud SQL for pilot; ADR review, cost and transaction gates |
+| D-019 | Confirmed | Feature PRs to dev, dev→stg→prod, no main deployment, prod human approval; bootstrap not executed |
+| D-020 | Confirmed / details open | Google, 18+, KYC, admin RBAC, welcome; provider terms/communications vendor open |
+| D-021 | Confirmed | Agent routine ops, diagnostics, test/review/PR and metrics proposals; human material policy, exceptional financial decisions, spending and production approval |
+| E-001 | Provisional | Minimal runtime unchanged |
+| E-002 | Confirmed | Same repo and environment-bound GHA, no live deployment authorized |
 
-Decision record: ID; date; status; question; options and trade-offs; resolution; approver and revision; affected changes and follow-up. Never substitute an agent recommendation for approval.
+Priority next decisions: concurrent or sequential 7-day clocks, meaning of SGD wallet, cancellation/reopen refund and penalty, referral minimum cash co-pay/threshold. Record dated scope/revision, approver and affected requirements; do not equate policy preference with provider or legal clearance.

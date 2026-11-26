@@ -1,5 +1,5 @@
 # Design — Enable product catalogue and shopper requests
 
-Draft; decisions not approved. Refer to domain-model.md, architecture.md, metrics.md and decision register.
+Draft, v0.2; see domain-model.md, architecture.md, agent-operations.md, metrics.md and decision register.
 
-Catalogue candidate creation with deterministic validation, optional AI/API enrichment, dedupe review, provenance and confidence. Product claims/region exclusivity are not automatically verified. Request records snapshot variant/region, quantity, amount and currency, deadlines and delivery location; expiry field enabled only for approved category. Private uploads scanned, public images approved. Moderation pending/rejected states; policy version and reason.
+Sparse parent products/variants and persistent searchable catalogue even without active requests. Deterministic checks with optional AI/API enrichment and user confirmation; source/time/confidence/visibility for each observation; missing MSRP not zero or blocking. Restricted receipt-derived price observations never public. Request-specific total SGD >=1000 minor units, quantity, deadline, location. Configurable category/corridor restrictions, private uploads, moderation.

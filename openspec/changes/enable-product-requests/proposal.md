@@ -1,12 +1,12 @@
 # Enable product catalogue and shopper requests
 
-Status: DRAFT / NOT APPROVED FOR IMPLEMENTATION.
+Status: DRAFT / NOT APPROVED FOR IMPLEMENTATION. Owner direction v0.2, remaining gates in docs/product/decisions.md.
 
 ## Why
-Enable product catalogue and shopper requests supports GetViaMe's marketplace direction.
+Enable product catalogue and shopper requests supports the marketplace direction.
 
 ## Scope and dependencies
-R-003; D-003/004/011/012. No food or controlled goods publication until cleared. Separate product identity and request economics.
+R-003; D-003/004/006/011/012. No live food/controlled goods before clearance.
 
 ## Capabilities
 ### New Capabilities
@@ -16,4 +16,4 @@ R-003; D-003/004/011/012. No food or controlled goods publication until cleared.
 None.
 
 ## Impact
-Proposed behavior only; existing application foundation unchanged. Review decisions in docs/product/decisions.md. No production changes, integrations, spending or implementation authorized.
+Proposed behavior only. Existing application unchanged. No live provisioning or product implementation authorized.

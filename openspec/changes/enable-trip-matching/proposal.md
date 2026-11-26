@@ -1,12 +1,12 @@
 # Enable traveller discovery and offers
 
-Status: DRAFT / NOT APPROVED FOR IMPLEMENTATION.
+Status: DRAFT / NOT APPROVED FOR IMPLEMENTATION. Owner direction v0.2, remaining gates in docs/product/decisions.md.
 
 ## Why
-Enable traveller discovery and offers supports GetViaMe's marketplace direction.
+Enable traveller discovery and offers supports the marketplace direction.
 
 ## Scope and dependencies
-R-004; D-004/006/012/015. Manual trips, browsing, price estimates and offer acceptance only. Funding is separate.
+R-004; D-004/006/012/015. Manual trips, indicative estimates and offers; funding separate.
 
 ## Capabilities
 ### New Capabilities
@@ -16,4 +16,4 @@ R-004; D-004/006/012/015. Manual trips, browsing, price estimates and offer acce
 None.
 
 ## Impact
-Proposed behavior only; existing application foundation unchanged. Review decisions in docs/product/decisions.md. No production changes, integrations, spending or implementation authorized.
+Proposed behavior only. Existing application unchanged. No live provisioning or product implementation authorized.

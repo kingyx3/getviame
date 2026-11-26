@@ -1,12 +1,12 @@
 # Explore gated marketplace expansion
 
-Status: DRAFT / NOT APPROVED FOR IMPLEMENTATION.
+Status: DRAFT / NOT APPROVED FOR IMPLEMENTATION. Owner direction v0.2, remaining gates in docs/product/decisions.md.
 
 ## Why
-Explore gated marketplace expansion supports GetViaMe's marketplace direction.
+Explore gated marketplace expansion supports the marketplace direction.
 
 ## Scope and dependencies
-R-006; D-010/011/013/017. Research and policy gate only until separate approval; no real points, food, partner or courier integration.
+R-006; D-010/011/013/017. No live cash points, food, courier, partner or global payout rollout; bookmarks/collective later.
 
 ## Capabilities
 ### New Capabilities
@@ -15,4 +15,4 @@ R-006; D-010/011/013/017. Research and policy gate only until separate approval;
 None.
 
 ## Impact
-Proposed behavior only; existing application foundation unchanged. Review decisions in docs/product/decisions.md. No production changes, integrations, spending or implementation authorized.
+Proposed behavior only. Existing application unchanged. No live provisioning or product implementation authorized.

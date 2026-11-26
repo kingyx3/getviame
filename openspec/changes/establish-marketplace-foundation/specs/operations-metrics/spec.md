@@ -1,19 +1,37 @@
 ## ADDED Requirements
 
 ### Requirement: MET-001 Versioned events and aggregate access
-The system SHALL record deduplicated versioned business events and expose privacy-safe read-only aggregate metrics to agents.
+The system SHALL record deduplicated versioned events and expose privacy-safe aggregates to agents.
 
-#### Scenario: Duplicate event
+#### Scenario: Duplicate
 - **WHEN** the same event is received twice
-- **THEN** aggregates count it once
+- **THEN** aggregates count once
 
 #### Scenario: Agent access
 - **WHEN** an analysis agent queries metrics
-- **THEN** only authorized sanitized aggregates are available
+- **THEN** only authorized sanitized results are available
 
 ### Requirement: COM-001 Welcome notification
-The system SHALL send a welcome message once per new account through an auditable outbox.
+The system SHALL send a welcome once through an auditable outbox.
 
 #### Scenario: Repeated login
-- **WHEN** an existing user signs in again
-- **THEN** no duplicate welcome message is queued
+- **WHEN** an existing user signs in
+- **THEN** no duplicate welcome is queued
+
+### Requirement: OPS-001 Agent-operable routine operations
+The system SHALL expose sanitized metrics, error/performance/cost/AI/reconciliation/support/feedback/deploy/test/spec coverage and audited runbooks and authorized nonprod actions.
+
+#### Scenario: Diagnosis
+- **WHEN** an authorized agent inspects a simulated failed job
+- **THEN** redacted evidence and permitted remediation are available
+
+#### Scenario: Restricted
+- **WHEN** an agent requests raw receipts, secrets or production mutation
+- **THEN** access is denied and audited
+
+### Requirement: OPS-002 Cost guardrails
+The system SHALL forecast aggregate recurring environment cost against under S$50/month, alert and bound nonessential workloads without compromising reconciliation.
+
+#### Scenario: Forecast breach
+- **WHEN** forecast crosses approved thresholds
+- **THEN** alerts and approved throttles apply without disabling critical checks
