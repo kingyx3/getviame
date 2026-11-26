@@ -44,3 +44,18 @@ The system SHALL require total >=S$10, acknowledgement of lawful import costs, a
 #### Scenario: Below minimum
 - **WHEN** offer total S$9.99
 - **THEN** offer rejected
+
+### Requirement: OFR-004 Maximum accepted delivery lead time
+The system SHALL permit advance requests but reject offer acceptance when the agreed delivery deadline exceeds 30 days from acceptance or a stricter approved provider limit.
+
+#### Scenario: Advance request
+- **WHEN** a shopper requests a product months in advance
+- **THEN** publication remains possible subject to request expiry and policy
+
+#### Scenario: Acceptance exceeds limit
+- **WHEN** delivery is more than 30 days after acceptance
+- **THEN** acceptance is rejected and new dates or later acceptance required
+
+#### Scenario: Boundary
+- **WHEN** delivery is exactly 30 days after acceptance and other constraints pass
+- **THEN** lead-time validation passes

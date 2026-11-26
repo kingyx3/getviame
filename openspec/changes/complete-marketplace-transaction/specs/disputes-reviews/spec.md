@@ -1,10 +1,10 @@
 ## ADDED Requirements
 
 ### Requirement: DSP-001 Seven-day dispute window
-The system SHALL accept eligible disputes within approved actual-delivery seven-day clock and freeze settlement until authorized resolution.
+The system SHALL accept eligible disputes during confirmation and within the separate seven-day clock after recorded receipt confirmation and freeze settlement until authorized resolution.
 
 #### Scenario: Timely dispute
-- **WHEN** participant raises dispute within window
+- **WHEN** participant raises dispute before the dispute deadline (including before confirmation)
 - **THEN** block release, preserve evidence
 
 #### Scenario: Boundary race
@@ -35,3 +35,14 @@ The system SHALL provide in-app messaging without automatic contact disclosure a
 #### Scenario: Sparse history
 - **WHEN** insufficient sample
 - **THEN** rates suppressed or marked insufficient
+
+### Requirement: DSP-003 Sequential confirmation and dispute deadlines
+The system SHALL start the seven-day dispute window at recorded manual or automatic receipt confirmation and permit disputes before confirmation.
+
+#### Scenario: Dispute after auto-confirm
+- **WHEN** shopper disputes on day 10 after report auto-confirmed day 7
+- **THEN** dispute is timely and settlement blocked
+
+#### Scenario: Delayed auto-confirm job
+- **WHEN** the day 7 job records valid confirmation on day 8
+- **THEN** the separate dispute clock starts day 8 and is not backdated

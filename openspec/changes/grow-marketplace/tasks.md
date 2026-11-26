@@ -8,3 +8,5 @@
 - [ ] 3.1 Run requirement-linked acceptance, regression and negative tests
 - [ ] 3.2 Independently verify behavior, security, cost and metrics evidence
 - [ ] 3.3 Obtain acceptance; archive/sync only after all gates pass
+
+- [ ] 4.1 Test REF-004 S$49.99/S$50, restricted source and no double redemption; confirm stacking and qualification

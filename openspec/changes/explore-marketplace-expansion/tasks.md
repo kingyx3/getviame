@@ -8,3 +8,5 @@
 - [ ] 3.1 Run requirement-linked acceptance, regression and negative tests
 - [ ] 3.2 Independently verify behavior, security, cost and metrics evidence
 - [ ] 3.3 Obtain acceptance; archive/sync only after all gates pass
+
+- [ ] 4.1 Assess recurrence demand and propose separate schedule, cancellation, availability and payment consent rules

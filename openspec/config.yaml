@@ -1,11 +1,11 @@
 schema: spec-driven
 context: |
   GetViaMe: cross-border traveller-powered shopping marketplace, Singapore-first, worldwide sourcing, future global corridors.
-  Read AGENTS.md, docs/product/brief.md, owner-answers-v0.2.md, decisions.md, roadmap.md, domain-model.md, metrics.md (under docs/product), docs/engineering/architecture.md and agent-operations.md.
+  Read AGENTS.md, docs/product/brief.md, owner-answers-v0.2.md, owner-answers-v0.3.md, wallet-policy.md, decisions.md, roadmap.md, domain-model.md, metrics.md (under docs/product), docs/engineering/architecture.md and agent-operations.md.
   Google-only auth, PWA, GCP Singapore, dev/stg/prod GHA, aggregate initial infrastructure under S$50/month.
   Inclusive 8%, S$10 minimum total job, SGD-only contract/payment/payout, no Stripe FX, MSRP optional and indicative.
-  Seven-day dispute/confirmation policy; exact clock, custody, cancellation and referral conditions gated.
-  Detailed specs remain draft; no feature implementation authorized by v0.2.
+  Sequential 7-day confirmation + 7-day dispute, 30-day acceptance-to-delivery max; receipt-triggered 20% shopper penalty payable to traveller; individual SGD credit wallets, optional credit refund and +2% election gated; S$50 minimum to redeem S$10 referral credit.
+  Detailed specs remain draft; no feature implementation authorized by v0.3.
   Existing minimal Node HTTP shell: npm start, npm test, npm run check.
   Current behavior openspec/specs/; proposed changes openspec/changes/. Public repo: no PII, secrets or receipts.
 rules:

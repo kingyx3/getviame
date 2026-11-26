@@ -36,3 +36,14 @@ The system SHALL grant eligible registration credit once separately from referre
 #### Scenario: Below threshold
 - **WHEN** order below qualifying threshold
 - **THEN** no referrer reward for that order
+
+### Requirement: REF-004 Referral redemption minimum
+The system SHALL permit redemption of a S$10 referral credit only against an eligible order with agreed gross total of at least S$50. Stacking and permitted remaining tender are subject to approved wallet rules.
+
+#### Scenario: Below redemption minimum
+- **WHEN** a shopper attempts to redeem S$10 referral credit against S$49.99
+- **THEN** redemption is denied without debiting credit
+
+#### Scenario: Boundary
+- **WHEN** a shopper applies a valid S$10 referral credit to an eligible S$50 order
+- **THEN** value threshold passes and S$40 remains due in permitted tender, subject to other approved rules

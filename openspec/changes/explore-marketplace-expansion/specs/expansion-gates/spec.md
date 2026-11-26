@@ -34,3 +34,10 @@ The system SHALL enable future modes via separately approved specs; collective r
 #### Scenario: Unapproved collective
 - **WHEN** collective buy requested before approval
 - **THEN** no combined obligation
+
+### Requirement: EXP-006 Recurrent orders deferred
+The system SHALL not create automatic recurrent orders or repeated payment obligations until separately approved; demand can be measured from repeat request patterns.
+
+#### Scenario: Repeat purchase
+- **WHEN** a shopper requests the same item again before recurrence is enabled
+- **THEN** the new order requires independent shopper intent and acceptance

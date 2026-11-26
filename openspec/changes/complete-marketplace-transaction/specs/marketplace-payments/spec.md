@@ -23,10 +23,10 @@ The system SHALL record immutable SGD amounts, fees, provider IDs and balanced j
 - **THEN** settlement blocked, operator alerted
 
 ### Requirement: PAY-003 Provider-gated settlement
-The system SHALL release only after approved seven-day deadline and valid receipt confirmation/auto-confirmation, no open dispute, eligibility and provider gates.
+The system SHALL release only after the separate seven-day dispute deadline following actual receipt confirmation/auto-confirmation, no open dispute, eligibility and provider gates.
 
 #### Scenario: Window open
-- **WHEN** fewer than seven days since approved clock start
+- **WHEN** receipt confirmation has not occurred or fewer than seven days have passed since confirmation
 - **THEN** no release
 
 #### Scenario: Open dispute
@@ -60,16 +60,42 @@ The system SHALL use agreed SGD only, inclusive fee and no Stripe FX; cash walle
 - **THEN** gross fee S$0.80, traveller obligation S$9.20 before costs
 
 ### Requirement: PAY-006 Cancellation and reopening
-The system SHALL allow free shopper cancellation before purchase, post-purchase consent/dispute and only approved disclosed penalty; traveller cancellation records rate and reopens eligible job without duplicating obligations.
+The system SHALL allow penalty-free shopper cancellation before eligible receipt submission, then 20% compensation payable to traveller under approved disclosed terms and exceptions; traveller cancellation records rate and reopens eligible job without duplicating obligations.
 
 #### Scenario: Traveller cancels
 - **WHEN** accepted order unfulfilled and cancelled
 - **THEN** record cancellation once, resolve original financial state and reopen per approved safety rules
 
 #### Scenario: Penalty unapproved
-- **WHEN** no applicable approved penalty
+- **WHEN** no eligible receipt or applicable approved penalty
 - **THEN** no charge
 
 #### Scenario: New traveller
 - **WHEN** replacement offer accepted
 - **THEN** new immutable agreement; no silent reuse of prior funds
+
+### Requirement: PAY-007 Receipt-triggered cancellation compensation
+The system SHALL disclose the 20% penalty to both parties before commitment; no penalty applies before eligible traveller receipt submission and thereafter compensation is payable to traveller under approved terms and legal/dispute exceptions.
+
+#### Scenario: Before receipt
+- **WHEN** shopper cancels before eligible receipt submission
+- **THEN** no cancellation penalty is charged
+
+#### Scenario: After receipt
+- **WHEN** shopper cancels after eligible receipt submission under approved terms
+- **THEN** 20% of approved penalty base is allocated to traveller and refundable amount calculated with audit breakdown
+
+#### Scenario: Invalid or late receipt
+- **WHEN** a receipt is invalid or submitted after effective cancellation
+- **THEN** no retrospective penalty applies and disputed evidence enters review
+
+### Requirement: PAY-008 Scheduled cash payouts
+The system SHALL accumulate eligible cash obligations and schedule provider-supported SGD payouts, excluding credit-elected obligations.
+
+#### Scenario: Payout batch
+- **WHEN** eligible cash obligations reach approved schedule
+- **THEN** authorized provider payout instructions are idempotent and actual status reconciled
+
+#### Scenario: Disputed or credit-elected
+- **WHEN** obligation is under dispute or settled into credits
+- **THEN** it is excluded from cash payout batch
