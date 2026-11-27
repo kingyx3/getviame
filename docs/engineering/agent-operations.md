@@ -1,0 +1,8 @@
+# Agent operations contract (proposed)
+
+Agents perform routine engineering and operational legwork without manual intervention within approved boundaries. No credentials/access granted by this PR. Human owns material policy, compliance, exceptional finance, budget expansion and prod approval.
+- Reproducible CLI setup, emulators/seed/reset nonprod only, tests/spec validation, Terraform validate/plan, CI/preview, machine-readable handoff; feature PRs target dev after bootstrap.
+- Separate service identities per environment/task, short-lived audited access. Agent read-only redacted metrics, errors, traces, latency, costs, AI usage, reconciliation, queues, backup status, CI/deploy, support/feedback and spec/test coverage. No raw PII/receipts/secrets or production write.
+- Admin dashboard with moderation, delivery reminders, disputes/evidence and recommendations, payout/reconciliation exceptions, catalogue quality, referral fraud, support, cost forecast. Deterministic approved routines handle retries/reminders/reconciliation with dedupe, limits, audit and escalation; AI never independently moves customer money or authorizes exceptions.
+- Agent improvement: snapshot → evidence-backed proposal/hypothesis, guardrails, rollback → approval when needed → implement/test/review/PR. Approved nonprod remediation permitted; no production experiment without authorization.
+- Acceptance: fresh agent diagnoses synthetic failure, obtains redacted evidence, safely retries scoped dev work, opens PR; attempts to read secrets/raw receipt or mutate prod fail and audit. Alert forecast breach and throttle nonessential workloads without compromising critical safeguards.

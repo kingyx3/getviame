@@ -1,25 +1,16 @@
-# GetViaMe product brief
+# GetViaMe product brief v0.3
 
-Status: DISCOVERY — not an approved product specification.
+Owner direction confirmed 2026-11-26 via the 60-question review and Q61–68; this remains specification-only, not authorization to implement or launch.
 
-## Confirmed intent
-- Repository: kingyx3/getviame.
-- Build an application iteratively using OpenSpec.
-- Humans provide high-level direction and material decisions; AI agents elaborate specifications and execute approved changes.
-- Current scope: scaffold and specification foundation only.
+## Vision and priorities
+Cross-border traveller-powered marketplace; Singapore-based frequent travellers, air crew and round trips returning to Singapore are initial focus, with global sourcing and future global corridor support. Priorities: overseas product accessibility > discovery > traveller supplementary income > price savings.
 
-## Product decisions needed
-These are open questions, not implied product requirements.
-
-| ID | Question | Status |
-| --- | --- | --- |
-| D-001 | What problem does GetViaMe solve and for whom? | Open / blocking |
-| D-002 | What is the primary user journey and successful outcome? | Open / blocking |
-| D-003 | What are the minimum MVP capabilities and explicit non-goals? | Open / blocking |
-| D-004 | Which platforms, data types, integrations, identity and privacy constraints apply? | Open |
-| D-005 | What operating constraints, budget, deployment target and success measures apply? | Open |
-
-## Discovery protocol
-Ask for a short product description first. Draft a concise vision, actors, journeys, scope, constraints and success criteria from the answer; flag material unknowns in decisions.md. Ask focused follow-ups only where needed. Do not generate speculative domain schemas, authentication, billing, or features before the relevant intent is agreed.
-
-On approval, update this brief and the roadmap, then propose the first vertical feature through OpenSpec. Do not promote draft ideas to current specs.
+## Confirmed MVP
+Installable responsive PWA, Google-only auth, age 18+, dual roles per account, payment-provider KYC for travellers. Singapore destination, SGD contracts/payment/transfer/payout only, no Stripe FX. Configurable legally permitted categories; food disabled until clearance. Permanent searchable parent-product/variant catalogue; user-confirmed enrichment from images, URLs, permitted APIs and AI, with sparse data supported. Shopper chooses price and delivery deadline; one variant/full quantity per request, minimum total S$10, individual units may be cheaper. MSRP and earnings indicative only, optional and never price constraints. Progressively learn from shopper inputs, public references and private receipts.
+Traveller freely browses or enters origin/destination/dates (optional city/airport); no capacity input. Group similar jobs but keep orders separate. Multiple offers/counteroffers; shopper chooses. Traveller bears all lawful import GST, duties and purchasing costs, acknowledges terms before acceptance, retains savings; reprice only with shopper agreement or cancel.
+8% inclusive fee; fund after offer acceptance before purchase; traveller fronts retail cost. Individual SGD credit wallets desired; separate refund, earned, bonus and promotional credit liabilities; custody and redemption gated. Scheduled cash payouts; traveller may elect credits with +2% funded from platform fee (basis pending). 
+Meetup; traveller reports actual delivery, shopper confirms, reminders and auto-confirm after 7 days of silence. Sequential: manual or eligible auto-confirmation starts a separate seven-day dispute period; no early settlement. Notify immediately and remind on days 3/6; auto-confirm day 7 if eligible/silent. Acceptance to delivery ≤30 days; advance requests allowed. AI recommends dispute resolutions, humans approve financial decisions. No shopper cancellation penalty until eligible receipt submission, then 20% payable to traveller and disclosed to both parties; base, validity and exceptions pending. Traveller cancellation reopens job and tracks cancellation; optional credit refund proposed to avoid repeat payment cost, original-method refund available as required.
+Mandatory private receipts with reviewed exception; uploader/staff access, price intelligence private. Verified star/text reviews blind until both submit or deadline; reputation indicators and in-app messaging.
+Ranked country featured products, admin override; I want this too clones independent requests first, bookmarks and collective purchasing eventually. S$10 spend-only referee credit at registration; S$10 referrer credit after first qualifying completed transaction, capped at five; minimum S$50 order to redeem S$10 referral credit, configurable qualification threshold, 180-day expiry, fraud controls. Manual trips first, opt-in travel planner integration and recurrent orders later, not MVP.
+## Engineering
+GCP Singapore; GitHub Actions feature PRs to dev, promotions dev → stg → prod; human production approval; .env.dev/.env.stg/.env.prod non-secret config, environment secrets. Stack delegated, aggregate initial infrastructure under S$50/month target. Agents perform approved routine engineering and operational work autonomously with sanitized observability, propose metric-backed improvements; no unilateral financial/legal decisions or production promotion.
