@@ -1,10 +1,15 @@
 # Tasks (all implementation tasks blocked pending approval)
-- [ ] 1.1 Review reconciled v0.9 and record approved revision, resolve nonpayment dependencies
+- [ ] 1.1 Review reconciled v0.11, record founder approval scope and approved specification revision; resolve nonpayment dependencies
 - [ ] 1.2 OpenSpec strict validation and npm run check
-- [ ] 2.1 Obtain written Stripe approval: actual account/charge topology, eligible individual KYC, custody, prepayment, retention and dispute extension, fee quote, rematch, late refund, payouts and promotions
-- [ ] 2.2 Obtain Singapore payments counsel opinion and any required MAS approval/exemption; approve reserve and commercial economics
-- [ ] 2.3 Review rounding, receipt/cancellation race, refund/reopen/expiry and mandatory exception terms; approve fallback if rematch not supported
-- [ ] 2.4 Map PAY/FUL/DSP/REV requirements to acceptance tests in stripe-connect-launch-gates-v0.9.md
-- [ ] 3.1 Implement approved bounded increment; validate synthetic sandbox happy path, partial/full refunds, expired/failed refund, payout failures, disputed hold, reprice/rematch, promo and idempotency
-- [ ] 3.2 Verify reconciliation, test reports, security and independent review; no real funds before gates pass
-- [ ] 3.3 Obtain acceptance; archive/sync only after verification; production separate human gate
+- [ ] 2.1 Obtain written Stripe approval of actual SG individual direct-charge account configuration, exclusive payout/refund authority, charge merchant and risk/fee responsibilities, retention/dispute/closure/late-refund paths and full pricing
+- [ ] 2.2 Obtain Singapore counsel opinion and any required regulatory clearance, approve reserve and commercial economics
+- [ ] 2.3 Resolve rounding, receipt/cancellation race, refund/reopen and mandatory exception terms, account disconnect and control loss runbook
+- [ ] 2.4 Verify provider-side payout restriction across every exposed path, current control fingerprint and failure handling (AC-01–03)
+- [ ] 2.5 Verify independent platform-funded refund shortfall path including first-ever order, fee reversal ordering, full and partial refunds without merchant action and original payer fallback (AC-04–07)
+- [ ] 2.6 Verify multi-order account payout cap and serialization, weekly payout/reconciliation, failed/unknown payout and dispute deadlines (AC-08–10)
+- [ ] 2.7 Verify account drift, deauthorisation, closure, merchant refund events and preserved obligations; test replacement fresh funding, duplicate/late callback and no cross-merchant reuse (AC-11–13)
+- [ ] 2.8 Verify signed Connect event and scoped account authorization, idempotency/concurrency, reserve coverage and kill switch, independent security/finance review (AC-14–16)
+- [ ] 2.9 Promotion funding/REF tests separately gated; do not enable promotions until pass (AC-17)
+- [ ] 3.1 Implement approved bounded increment and run all mapped automated tests + sandbox/provider configuration tests; document exact configuration, provider IDs, evidence and limits
+- [ ] 3.2 All applicable mandatory ACs passed; independent reviewer verifies evidence, no mock-only pass for provider-side controls; failed/unverified gate blocks release, no waivers
+- [ ] 3.3 Obtain acceptance; archive/sync only after verification; live enablement separately human approved and configuration unchanged
