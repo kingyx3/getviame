@@ -40,3 +40,49 @@ The system SHALL notify shopper immediately after eligible report, remind on day
 #### Scenario: Sequential silent timeline
 - **WHEN** eligible report occurs day 0, shopper remains silent and auto-confirmation is recorded day 7
 - **THEN** settlement cannot be eligible before day 14 and all other gates pass
+
+### Requirement: FUL-004 Valid purchase evidence and notice
+The system SHALL accept receipt only after verified funding, match order/product/quantity/merchant/date, allocate shared receipt lines without duplicate claim, apply deterministic clear-case checks and human review of uncertain/alternative evidence; notify shopper, preserve effective submit/cancel times; no retrospective penalty from later evidence.
+
+#### Scenario: Before funding
+- **WHEN** receipt submitted pre-funding
+- **THEN** reject as purchase evidence
+
+#### Scenario: Shared receipt
+- **WHEN** two orders claim same line quantity
+- **THEN** prevent over-allocation
+
+#### Scenario: Pending review
+- **WHEN** shopper cancels while prior submission under review
+- **THEN** hold disputed penalty determination, preserve effective timestamps and route to review
+
+#### Scenario: Alternative
+- **WHEN** receipt unavailable
+- **THEN** review alternative proof; no automatic penalty without validated grounds
+
+#### Scenario: Notice
+- **WHEN** valid purchase submission recorded
+- **THEN** notify shopper distinctly from delivery confirmation
+
+### Requirement: FUL-005 Handover and condition
+The system SHALL require authentic goods matching agreed condition; provide voluntary transaction-specific single-use code as confirmation, manual confirmation or reviewed alternative evidence; auto-confirm only with sufficient actual-delivery evidence and no contrary evidence. Mutually agreed reschedule/extension within original 30 days; private meetup details.
+
+#### Scenario: Code
+- **WHEN** shopper voluntarily supplies valid code at actual handover
+- **THEN** record confirmation and start separate seven-day dispute clock
+
+#### Scenario: Replay
+- **WHEN** code used twice or for wrong order
+- **THEN** reject and audit
+
+#### Scenario: Unsupported
+- **WHEN** traveller reports delivery without sufficient evidence
+- **THEN** no auto-confirm or release
+
+#### Scenario: No-show
+- **WHEN** either misses meetup
+- **THEN** reschedule by mutual consent within cap or escalate
+
+#### Scenario: Condition
+- **WHEN** materially incorrect or counterfeit reported
+- **THEN** dispute and human review

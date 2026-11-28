@@ -1,7 +1,7 @@
 ## ADDED Requirements
 
 ### Requirement: PAY-001 Funded commitment
-The system SHALL accept an offer only once verified provider funding and any approved platform promotion backing cover the agreed total; no traveller purchase before funded.
+The system SHALL accept an offer only once verified PayNow funding (when cash is due) and any approved platform promotion backing cover the agreed total; no traveller purchase before funded.
 #### Scenario: Pending checkout
 - **WHEN** checkout redirect occurs without verified confirmation
 - **THEN** order remains awaiting funding and no binding acceptance
@@ -91,7 +91,7 @@ The system SHALL aggregate eligible obligations by traveller into weekly SGD ban
 - **THEN** do not mark paid; exclude ineligible amount and reconcile failure without duplicate movement
 
 ### Requirement: PAY-009 External clearance and financial safeguards
-The system SHALL default live collection and promotional funding off until applicable written provider/counsel approval, verified cost/funding model, approved stable direct-charge configuration and every applicable mandatory acceptance criterion in direct-charge-acceptance-v0.11.md passes with revision-specific evidence. No waiver by feature flag, admin or AI. Keep refunds and existing obligations operational when new commitments paused.
+The system SHALL default live collection and promotional funding off until applicable written provider/counsel approval, verified cost/funding model, approved stable direct-charge configuration and every applicable mandatory acceptance criterion in direct-charge-acceptance-v0.11.md and its v0.12 addendum passes with revision-specific evidence. No waiver by feature flag, admin or AI. Keep refunds and existing obligations operational when new commitments paused.
 #### Scenario: Missing approval
 - **WHEN** user attempts live collection without required signoff
 - **THEN** unavailable and no funds taken
@@ -149,3 +149,94 @@ The system SHALL scope direct-charge operations to verified immutable connected-
 #### Scenario: Unverified gate
 - **WHEN** any mandatory applicable technical gate fails, lacks evidence or changes after validation
 - **THEN** release/live enablement blocked; existing obligations continue under approved fallback; no override to mark passed
+
+### Requirement: PAY-014 Consented amendments and exact accounting
+The system SHALL require bilateral consent and immutable contract version for price, variant or quantity change; preserve original delivery and provider deadlines, enforce S$10 minimum and approved cap; verify additional same-merchant funding before effective increase; approved source-proportional original-tender refund on reduction; recompute fee and exact traveller net, reconcile all allocations without reassigning charges. No unsupported amendment path enabled.
+
+#### Scenario: Increase
+- **WHEN** S$100 agreed changed to S$110 with both consents
+- **THEN** verify S$10 additional funding before effect; recompute gross fee S$9.90 and net S$100.10 before sourcing costs
+
+#### Scenario: Decrease
+- **WHEN** S$100 changed to S$90 by consent
+- **THEN** refund approved S$10 source proportionately and recalculate fee S$8.10/net S$81.90, track refund until final
+
+#### Scenario: Failure
+- **WHEN** increment fails or merchant/currency differs
+- **THEN** old contract remains effective, reconcile and return any surplus; no duplicate order
+
+#### Scenario: Deadline
+- **WHEN** amendment would reset collection or 30-day delivery limit
+- **THEN** reject
+
+### Requirement: PAY-015 Disjoint liabilities and reserve exposure
+The system SHALL protect disjoint per-allocation liability buckets; refund reservation replaces overlapping seller liability, payout reservation is not payment; cap payout at unreserved eligible obligations and reconciled available balance after protected disjoint liabilities and adjustments. Enforce risk-based outstanding financial exposure, approved stress reserve and no instant/early payout; platform bears ordinary account/payout/processor costs, honour existing obligations and stop incompatible new commitments if costs/coverage fail.
+
+#### Scenario: Overlap
+- **WHEN** S$91 eligible and S$91 held, of held amount S$40 reclassified as refund reserve, S$182 available and no other liabilities
+- **THEN** protect S$51 held plus S$40 refund reserve exactly once; cap payout S$91; no double subtraction
+
+#### Scenario: Fee shortfall
+- **WHEN** actual ordinary processor/account/payout costs exceed fee
+- **THEN** preserve promised seller net and existing refunds, stop new incompatible exposure and alert
+
+#### Scenario: Instant payout
+- **WHEN** traveller requests early or instant payout
+- **THEN** reject
+
+#### Scenario: Exposure
+- **WHEN** new order exceeds approved outstanding exposure
+- **THEN** block until resolved; no baggage capacity requirement
+
+### Requirement: PAY-016 Cancellation challenge and exception settlement
+The system SHALL apply full applicable refund on traveller cancellation including after purchase; pre-receipt shopper full refund; valid post-receipt 20% inclusive penalty with source-proportional refund and traveller retains goods subject to law; cancellation compensation eligible only after recorded notice + separate seven-day challenge, no open case, and weekly payout. After physical delivery use dispute process. Resolve no-show, mutual cancellation, overdue, restriction, nonconforming/counterfeit and statutory remedies via approved human review; no automatic seller release.
+
+#### Scenario: After purchase traveller cancels
+- **WHEN** traveller bought goods then cancels
+- **THEN** full applicable original-tender refund and eligible unfunded reopen; traveller bears sourcing loss
+
+#### Scenario: Challenge
+- **WHEN** compensation challenge open on day 7
+- **THEN** freeze compensation until authorised clearance
+
+#### Scenario: Post-delivery
+- **WHEN** shopper reports incorrect goods
+- **THEN** dispute, not ordinary cancellation penalty
+
+#### Scenario: Overdue
+- **WHEN** original 30-day limit expires without delivery
+- **THEN** exception review; no automatic release
+
+### Requirement: PAY-017 Provider limits and recovery
+The system SHALL use PayNow only; require approved inclusive tax treatment, provider fee adjustments, external debit/reserve monitoring, contractual lawful recovery of post-payout liabilities, and funded continuity/fallback for access loss, insolvency or shutdown. No arbitrary bank debit or reliance on future sales. If mandatory gate fails halt and escalate; preserve existing obligations.
+
+#### Scenario: Post payout refund
+- **WHEN** legally owed refund after bank payout
+- **THEN** approved independent funding/verified payer path and lawful recovery; no false refund success
+
+#### Scenario: External refund
+- **WHEN** merchant independently refunds charge
+- **THEN** reconcile and escalate fees/loss allocation under approved contract, no duplicate
+
+#### Scenario: Shutdown
+- **WHEN** continuity plan invoked
+- **THEN** maintain outstanding obligations via approved responsible party and auditable runbook
+
+#### Scenario: Wrong method
+- **WHEN** card or PayLah attempted
+- **THEN** not available
+
+### Requirement: PAY-018 Platform-only and mixed promotional funding
+The system SHALL verify independent approved platform funding for promo-only orders, no invented charge; allocate refunds in integer cents by proportional floor and stable largest remainder, never exceed original tender; reconcile grants, fee and seller obligation, preserve exact original-tender monetary refunds.
+
+#### Scenario: Promo only
+- **WHEN** eligible S$50 fully promo funded with verified platform backing
+- **THEN** seller cash obligation S$45.50, no shopper charge, no new referrer reward
+
+#### Scenario: Mixed
+- **WHEN** S$100 with S$70 cash/S$30 promo cancelled after valid receipt
+- **THEN** refund S$56 cash, restore eligible S$24 promo, reconcile compensation and fee
+
+#### Scenario: Rounding
+- **WHEN** proportional refunds leave residual cents
+- **THEN** allocate stable largest remainder, total exact, no negative or excess tender refund
