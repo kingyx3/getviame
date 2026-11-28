@@ -170,7 +170,7 @@ The system SHALL require bilateral consent and immutable contract version for pr
 - **THEN** reject
 
 ### Requirement: PAY-015 Disjoint liabilities and reserve exposure
-The system SHALL protect disjoint per-allocation liability buckets; refund reservation replaces overlapping seller liability, payout reservation is not payment; cap payout at unreserved eligible obligations and reconciled available balance after protected disjoint liabilities and adjustments. Enforce risk-based outstanding financial exposure, approved stress reserve and no instant/early payout; platform bears ordinary account/payout/processor costs, honour existing obligations and stop incompatible new commitments if costs/coverage fail.
+The system SHALL reserve disjoint liabilities per allocation (refund replaces overlap; reservation is not payment), cap payouts by unreserved eligible obligations and reconciled available balance less protected liabilities/adjustments, enforce financial exposure and stress-reserve limits, prohibit early/instant payouts, and absorb ordinary processor/account/payout costs. Honour existing obligations and stop incompatible new exposure when coverage fails.
 
 #### Scenario: Overlap
 - **WHEN** S$91 eligible and S$91 held, of held amount S$40 reclassified as refund reserve, S$182 available and no other liabilities
@@ -189,7 +189,7 @@ The system SHALL protect disjoint per-allocation liability buckets; refund reser
 - **THEN** block until resolved; no baggage capacity requirement
 
 ### Requirement: PAY-016 Cancellation challenge and exception settlement
-The system SHALL apply full applicable refund on traveller cancellation including after purchase; pre-receipt shopper full refund; valid post-receipt 20% inclusive penalty with source-proportional refund and traveller retains goods subject to law; cancellation compensation eligible only after recorded notice + separate seven-day challenge, no open case, and weekly payout. After physical delivery use dispute process. Resolve no-show, mutual cancellation, overdue, restriction, nonconforming/counterfeit and statutory remedies via approved human review; no automatic seller release.
+The system SHALL apply PAY-006/007 cancellation refunds and penalty, with traveller retention of goods subject to law; compensation requires recorded notice plus a separate seven-day challenge, no open case and weekly payout. Route post-delivery complaints and nonordinary cancellations, overdue/no-show, restrictions and nonconforming goods to authorised review; no automatic seller release.
 
 #### Scenario: After purchase traveller cancels
 - **WHEN** traveller bought goods then cancels
@@ -198,6 +198,18 @@ The system SHALL apply full applicable refund on traveller cancellation includin
 #### Scenario: Challenge
 - **WHEN** compensation challenge open on day 7
 - **THEN** freeze compensation until authorised clearance
+
+#### Scenario: Before receipt shopper cancels
+- **WHEN** shopper cancels before valid purchase evidence
+- **THEN** full applicable original-tender refund, zero compensation and fee
+
+#### Scenario: Valid post-receipt shopper cancellation
+- **WHEN** ordinary shopper cancellation occurs after valid purchase evidence and before delivery
+- **THEN** 20% inclusive penalty, 80% source-proportional refund; traveller retains goods subject to law and compensation waits for cleared challenge
+
+#### Scenario: Mutual or restricted cancellation
+- **WHEN** both parties agree to cancel or government/transport restriction prevents delivery
+- **THEN** authorised review with shopper refund as recommended restriction baseline, mandatory remedies preserved, no automatic release
 
 #### Scenario: Post-delivery
 - **WHEN** shopper reports incorrect goods
