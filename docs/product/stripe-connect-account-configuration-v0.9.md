@@ -1,5 +1,7 @@
 # Stripe Connect account configuration diligence — v0.9 addendum, 2026-11-28
 
+> Historical research: current founder-approved direct-charge, no funded rematch and PayNow-only MVP requirements are in owner-answers-v0.12.md and direct-charge-acceptance-v0.11.md (including AC-18–24). Do not implement SCT or rematching based on this document.
+
 Research only, no new founder decision. Verified draft PR #2 open/draft at 7c652c12cea25350fef4e3a713093f49c991fbb6; main 7e26b982e2c199e883744545b0e99da390254612. Read alongside stripe-connect-launch-gates-v0.9.md, owner-answers-v0.9.md. No changes to required rematching, 44-day ordinary lifecycle, weekly settlement, 9% min SGD1 fee, SGD10 min order, original-method refunds or platform absorption of fees.
 
 ## New findings (official documentation)

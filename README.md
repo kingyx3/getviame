@@ -4,7 +4,7 @@ A specification-first application under development. This initial scaffold inten
 
 ## Quick start
 
-Requires Node.js 22+ and npm.
+Requires Node.js 22+ and npm for the scaffold; OpenSpec 2.2.0 requires Node.js >=22.20.0. Use a supported current Node 22 patch (`nvm install 22`).
 
 ```sh
 npm start
@@ -18,12 +18,14 @@ Open http://localhost:3000. The only endpoints are the placeholder home page and
 Install OpenSpec locally in your development environment and generate the official skills for your coding agent:
 
 ```sh
-npm install -g @fission-ai/openspec@latest
+npm install -g @fission-ai/openspec@2.2.0
 openspec init --tools codex,claude
 openspec config profile
 openspec update
 openspec validate --all --strict
 ```
+
+CI also runs the pinned OpenSpec strict validation. The CLI release and package metadata are recorded in docs/engineering/verification.md; local generated agent integrations still need installation and review.
 
 Choose the expanded profile if you want the verification skill. Commit generated agent integrations and record the OpenSpec version in the same setup change. Do not commit local credentials.
 

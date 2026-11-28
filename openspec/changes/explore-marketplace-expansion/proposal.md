@@ -1,6 +1,6 @@
 # Explore gated marketplace expansion
 
-Status: DRAFT / NOT APPROVED FOR IMPLEMENTATION. Owner direction v0.2, remaining gates in docs/product/decisions.md.
+Status: DRAFT / NOT APPROVED FOR IMPLEMENTATION. Owner direction v0.12, remaining gates in docs/product/decisions.md.
 
 ## Why
 Explore gated marketplace expansion supports the marketplace direction.
@@ -16,3 +16,5 @@ None.
 
 ## Impact
 Proposed behavior only. Existing application unchanged. No live provisioning or product implementation authorized.
+
+Umbrella exploration only; create separately approved proposals for each unrelated expansion before implementation. No implicit future wallet, provider or card approval.

@@ -6,7 +6,7 @@ The system SHALL accept an offer only once verified PayNow funding (when cash is
 - **WHEN** checkout redirect occurs without verified confirmation
 - **THEN** order remains awaiting funding and no binding acceptance
 #### Scenario: Confirmed
-- **WHEN** matching signed provider success and eligible funding verified
+- **WHEN** matching signed provider success and eligible funding verified for cash-due orders
 - **THEN** request becomes funded once
 #### Scenario: Late duplicate payment
 - **WHEN** competing payment succeeds after reservation expired or another offer funded
@@ -91,7 +91,7 @@ The system SHALL aggregate eligible obligations by traveller into weekly SGD ban
 - **THEN** do not mark paid; exclude ineligible amount and reconcile failure without duplicate movement
 
 ### Requirement: PAY-009 External clearance and financial safeguards
-The system SHALL default live collection and promotional funding off until applicable written provider/counsel approval, verified cost/funding model, approved stable direct-charge configuration and every applicable mandatory acceptance criterion in direct-charge-acceptance-v0.11.md and its v0.12 addendum passes with revision-specific evidence. No waiver by feature flag, admin or AI. Keep refunds and existing obligations operational when new commitments paused.
+The system SHALL default live collection and promotional funding off until applicable written provider/counsel approval, verified cost/funding model, approved stable direct-charge configuration and every applicable mandatory acceptance criterion in direct-charge-acceptance-v0.11.md including its v0.12 section passes with revision-specific evidence. No waiver by feature flag, admin or AI. Keep refunds and existing obligations operational when new commitments paused.
 #### Scenario: Missing approval
 - **WHEN** user attempts live collection without required signoff
 - **THEN** unavailable and no funds taken
@@ -227,7 +227,7 @@ The system SHALL use PayNow only; require approved inclusive tax treatment, prov
 - **THEN** not available
 
 ### Requirement: PAY-018 Platform-only and mixed promotional funding
-The system SHALL verify independent approved platform funding for promo-only orders, no invented charge; allocate refunds in integer cents by proportional floor and stable largest remainder, never exceed original tender; reconcile grants, fee and seller obligation, preserve exact original-tender monetary refunds.
+When promotions are separately enabled, the system SHALL verify independent approved platform funding for promo-only orders, no invented charge; allocate refunds in integer cents by proportional floor and stable largest remainder, never exceed original tender; reconcile grants, fee and seller obligation, preserve exact original-tender monetary refunds.
 
 #### Scenario: Promo only
 - **WHEN** eligible S$50 fully promo funded with verified platform backing

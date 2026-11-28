@@ -14,4 +14,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
+          check-latest: true
       - run: npm run check
+      - name: Strict OpenSpec validation (pinned CLI)
+        run: npm exec --yes --package=@fission-ai/openspec@2.2.0 -- openspec validate --all --strict
