@@ -24,3 +24,23 @@ The system SHALL support searchable products without active requests or known MS
 #### Scenario: New receipt
 - **WHEN** credible regional price extracted
 - **THEN** internal observation recorded separately from public MSRP and order price
+
+
+### Requirement: CAT-004 Catalogue maintenance and safe enrichment
+The system SHALL require name/category/variant and image/reference/meaningful description; reviewed duplicate merge/corrections, material variant versions, regional availability confidence and immutable snapshots; public-source MSRP only; validate rights, files/URLs, SSRF and untrusted AI output.
+
+#### Scenario: Merge
+- **WHEN** approved duplicate merge
+- **THEN** canonical references resolve, snapshots unchanged
+
+#### Scenario: Change
+- **WHEN** material variant changes
+- **THEN** new variant/version
+
+#### Scenario: Untrusted
+- **WHEN** URL resolves to private address or AI invents facts
+- **THEN** block fetch or mark unverified, no auto-publication
+
+#### Scenario: Availability
+- **WHEN** reference unverified
+- **THEN** label unverified, no stock promise

@@ -63,3 +63,42 @@ The system SHALL permit advance requests but reject offer acceptance when the ag
 #### Scenario: Pending checkout
 - **WHEN** a selected offer is awaiting verified payment or approved promotional funding
 - **THEN** reserve only that owner's request for up to the approved 15-minute checkout window if necessary; no traveller purchase commitment until funded
+
+
+### Requirement: OFR-005 Offer lifecycle
+The system SHALL allow prices above/equal/below budget by consent, default 48h expiry configurable within request deadline, withdrawal before funding except active checkout, inactive competing offers after funding and reconfirm on reopening.
+
+#### Scenario: Expiry
+- **WHEN** earlier of 48h default or request deadline reached
+- **THEN** cannot select
+
+#### Scenario: Withdraw
+- **WHEN** active checkout
+- **THEN** deny ordinary withdrawal until resolved
+
+#### Scenario: Competing
+- **WHEN** one offer funded
+- **THEN** others inactive and notified; reopen requires reconfirmation
+
+#### Scenario: Lower
+- **WHEN** lower eligible price accepted
+- **THEN** use agreed price
+
+### Requirement: OFR-006 Selection and amendments
+The system SHALL separate nonbinding R-005 selection from R-006 verified acceptance; no mock production acceptance; funded amendment requires bilateral consent, verified additional funding or original-tender refund, immutable versions and original 30-day cap.
+
+#### Scenario: Selection
+- **WHEN** owner selects before payment enabled
+- **THEN** nonbinding selection only
+
+#### Scenario: Increase
+- **WHEN** additional payment pending/failed
+- **THEN** original agreement remains effective
+
+#### Scenario: Decrease
+- **WHEN** approved reduction
+- **THEN** recalculate fee and obligation, track original-tender refund
+
+#### Scenario: Late
+- **WHEN** amendment exceeds original 30 days
+- **THEN** reject

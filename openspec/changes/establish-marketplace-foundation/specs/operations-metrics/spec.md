@@ -35,3 +35,19 @@ The system SHALL forecast aggregate recurring environment cost against under S$5
 #### Scenario: Forecast breach
 - **WHEN** forecast crosses approved thresholds
 - **THEN** alerts and approved throttles apply without disabling critical checks
+
+
+### Requirement: OPS-003 Resilience and pilot readiness
+The system SHALL test WCAG 2.2 AA target, mobile/offline, bounded search/pagination, load/SLO, backup/restore, queue recovery and rollback; approve measurable pilot thresholds and budgets before release, count AI infrastructure costs once.
+
+#### Scenario: Recovery
+- **WHEN** synthetic backup restored
+- **THEN** integrity and approved RPO/RTO demonstrated
+
+#### Scenario: Cost
+- **WHEN** forecast exceeds approved envelope
+- **THEN** escalate and throttle nonessential work, preserve critical safeguards
+
+#### Scenario: Expansion
+- **WHEN** mature cohorts fail reliability/contribution/support gates
+- **THEN** no expansion

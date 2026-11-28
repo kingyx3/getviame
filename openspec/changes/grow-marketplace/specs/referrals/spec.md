@@ -50,3 +50,38 @@ The system SHALL reserve promised promotional face value atomically within appro
 #### Scenario: Existing promise
 - **WHEN** campaign paused and admitted reward becomes eligible
 - **THEN** existing legitimate commitment honoured once
+
+
+### Requirement: REF-006 Grant lifecycle
+The system SHALL record immutable attribution except audited genuine error; redeem earliest-expiring grant first with stable tie-break; issue pending reward only at unlock, 180 days from issuance; restore valid grant or seven-day grace if expired while reserved; no tranche recycling.
+
+#### Scenario: Pending
+- **WHEN** reward awaits clearance
+- **THEN** no spendable grant or expiry clock
+
+#### Scenario: Ordering
+- **WHEN** multiple grants
+- **THEN** earliest expiry first
+
+#### Scenario: Restore
+- **WHEN** expired while reserved
+- **THEN** eligible restoration with seven-day grace
+
+#### Scenario: Expired
+- **WHEN** grant expires unused
+- **THEN** no budget recycling
+
+### Requirement: REF-007 Requalification and fraud reversal
+The system SHALL allow later qualifying order after cancellation without duplicate reward; revoke unused fraudulent reward with evidence and review, no unrelated confiscation or automatic debt; explicit adjustment or fully promotional funding for invalid cash residual.
+
+#### Scenario: Retry
+- **WHEN** first qualifying order cancelled then later valid order clears
+- **THEN** at most one reward
+
+#### Scenario: Fraud
+- **WHEN** substantiated reversal
+- **THEN** revoke unused affected grant; redeemed amounts reviewed
+
+#### Scenario: Residual
+- **WHEN** cash 1–49 cents under applicable minimum
+- **THEN** explicit adjustment or fully funded promo; no surcharge
