@@ -1,7 +1,7 @@
 ## ADDED Requirements
 
 ### Requirement: OFR-001 Transparent estimates
-The system SHALL show gross SGD, inclusive 8% fee, SGD net, optional home-currency display and estimated margin, with source/time and uncertainty; estimates never set price or trigger provider FX.
+The system SHALL show gross SGD, inclusive max(S$1, 9% gross rounded half-up to cents) fee, SGD net, optional home-currency display and optional estimates with source/time and uncertainty; exact traveller net before sourcing costs; estimates never set price or trigger provider FX.
 
 #### Scenario: Reference available
 - **WHEN** MSRP and FX data available
@@ -16,7 +16,7 @@ The system SHALL show gross SGD, inclusive 8% fee, SGD net, optional home-curren
 - **THEN** system does not override chosen price
 
 ### Requirement: OFR-002 Submit and accept offers
-The system SHALL permit competing full-quantity SGD offers/counteroffers and shopper choice; one active accepted order atomically.
+The system SHALL permit competing full-quantity SGD offers/counteroffers and shopper choice; one active funded accepted order atomically; only the request owner can select an offer and pending checkout is not acceptance.
 
 #### Scenario: Concurrent
 - **WHEN** two offers accepted simultaneously
@@ -59,3 +59,7 @@ The system SHALL permit advance requests but reject offer acceptance when the ag
 #### Scenario: Boundary
 - **WHEN** delivery is exactly 30 days after acceptance and other constraints pass
 - **THEN** lead-time validation passes
+
+#### Scenario: Pending checkout
+- **WHEN** a selected offer is awaiting verified payment or approved promotional funding
+- **THEN** reserve only that owner's request for up to the approved 15-minute checkout window if necessary; no traveller purchase commitment until funded

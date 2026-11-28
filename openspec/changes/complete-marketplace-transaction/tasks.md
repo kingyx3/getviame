@@ -1,13 +1,15 @@
-# Tasks (all blocked pending approval)
-
-- [ ] 1.1 Resolve applicable decisions, compliance and cost gates; record approved revision
-- [ ] 1.2 Validate OpenSpec artifacts and dependencies
-- [ ] 2.1 Obtain legal/provider SGD custody/no-FX and timing signoff
-- [ ] 2.2 Resolve evidence, sequential deadline boundaries, penalty base/terms, refund/reopen and payout cadence before implementation
-- [ ] 2.3 Design PAY ledger/concurrency/refunds and S$10 tests
-- [ ] 2.4 Design FUL day 3/6/7 reminders, silent day 14 / manual-confirm +7, early/contested, private receipt and DSP/REV permission tests
-- [ ] 3.1 Run requirement-linked acceptance, regression and negative tests
-- [ ] 3.2 Independently verify behavior, security, cost and metrics evidence
-- [ ] 3.3 Obtain acceptance; archive/sync only after all gates pass
-
-- [ ] 4.1 Test PAY-007 receipt/cancel race, invalid evidence, 20% allocation and exceptions; PAY-008 cash batch dedupe/credit election exclusion
+# Tasks (all implementation tasks blocked pending approval)
+- [ ] 1.1 Review reconciled v0.11, record founder approval scope and approved specification revision; resolve nonpayment dependencies
+- [ ] 1.2 OpenSpec strict validation and npm run check
+- [ ] 2.1 Obtain written Stripe approval of actual SG individual direct-charge account configuration, exclusive payout/refund authority, charge merchant and risk/fee responsibilities, retention/dispute/closure/late-refund paths and full pricing
+- [ ] 2.2 Obtain Singapore counsel opinion and any required regulatory clearance, approve reserve and commercial economics
+- [ ] 2.3 Resolve rounding, receipt/cancellation race, refund/reopen and mandatory exception terms, account disconnect and control loss runbook
+- [ ] 2.4 Verify provider-side payout restriction across every exposed path, current control fingerprint and failure handling (AC-01–03)
+- [ ] 2.5 Verify independent platform-funded refund shortfall path including first-ever order, fee reversal ordering, full and partial refunds without merchant action and original payer fallback (AC-04–07)
+- [ ] 2.6 Verify multi-order account payout cap and serialization, weekly payout/reconciliation, failed/unknown payout and dispute deadlines (AC-08–10)
+- [ ] 2.7 Verify account drift, deauthorisation, closure, merchant refund events and preserved obligations; test replacement fresh funding, duplicate/late callback and no cross-merchant reuse (AC-11–13)
+- [ ] 2.8 Verify signed Connect event and scoped account authorization, idempotency/concurrency, reserve coverage and kill switch, independent security/finance review (AC-14–16)
+- [ ] 2.9 Promotion funding/REF tests separately gated; do not enable promotions until pass (AC-17)
+- [ ] 3.1 Implement approved bounded increment and run all mapped automated tests + sandbox/provider configuration tests; document exact configuration, provider IDs, evidence and limits
+- [ ] 3.2 All applicable mandatory ACs passed; independent reviewer verifies evidence, no mock-only pass for provider-side controls; failed/unverified gate blocks release, no waivers
+- [ ] 3.3 Obtain acceptance; archive/sync only after verification; live enablement separately human approved and configuration unchanged
