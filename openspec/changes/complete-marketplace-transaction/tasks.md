@@ -1,13 +1,10 @@
-# Tasks (all blocked pending approval)
-
-- [ ] 1.1 Resolve applicable decisions, compliance and cost gates; record approved revision
-- [ ] 1.2 Validate OpenSpec artifacts and dependencies
-- [ ] 2.1 Obtain legal/provider SGD custody/no-FX and timing signoff
-- [ ] 2.2 Resolve evidence, sequential deadline boundaries, penalty base/terms, refund/reopen and payout cadence before implementation
-- [ ] 2.3 Design PAY ledger/concurrency/refunds and S$10 tests
-- [ ] 2.4 Design FUL day 3/6/7 reminders, silent day 14 / manual-confirm +7, early/contested, private receipt and DSP/REV permission tests
-- [ ] 3.1 Run requirement-linked acceptance, regression and negative tests
-- [ ] 3.2 Independently verify behavior, security, cost and metrics evidence
-- [ ] 3.3 Obtain acceptance; archive/sync only after all gates pass
-
-- [ ] 4.1 Test PAY-007 receipt/cancel race, invalid evidence, 20% allocation and exceptions; PAY-008 cash batch dedupe/credit election exclusion
+# Tasks (all implementation tasks blocked pending approval)
+- [ ] 1.1 Review reconciled v0.9 and record approved revision, resolve nonpayment dependencies
+- [ ] 1.2 OpenSpec strict validation and npm run check
+- [ ] 2.1 Obtain written Stripe approval: actual account/charge topology, eligible individual KYC, custody, prepayment, retention and dispute extension, fee quote, rematch, late refund, payouts and promotions
+- [ ] 2.2 Obtain Singapore payments counsel opinion and any required MAS approval/exemption; approve reserve and commercial economics
+- [ ] 2.3 Review rounding, receipt/cancellation race, refund/reopen/expiry and mandatory exception terms; approve fallback if rematch not supported
+- [ ] 2.4 Map PAY/FUL/DSP/REV requirements to acceptance tests in stripe-connect-launch-gates-v0.9.md
+- [ ] 3.1 Implement approved bounded increment; validate synthetic sandbox happy path, partial/full refunds, expired/failed refund, payout failures, disputed hold, reprice/rematch, promo and idempotency
+- [ ] 3.2 Verify reconciliation, test reports, security and independent review; no real funds before gates pass
+- [ ] 3.3 Obtain acceptance; archive/sync only after verification; production separate human gate

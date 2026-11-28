@@ -1,49 +1,52 @@
 ## ADDED Requirements
 
 ### Requirement: REF-001 Referral rewards
-The system SHALL grant eligible referee S$10 spend-only at registration and referrer S$10 after first qualifying completed transaction, max five qualifying referees and 180-day expiry.
-
-#### Scenario: Completion
-- **WHEN** first qualifying order completes
-- **THEN** referrer grant once
-
-#### Scenario: Cap reached
-- **WHEN** sixth referee qualifies
-- **THEN** no sixth referrer grant
-
-#### Scenario: Replay
-- **WHEN** qualifying event repeated
-- **THEN** no duplicate credit or notification
+The system SHALL grant eligible referee S$10 promotional discount at registration and record S$10 pending referrer reward on first qualifying funded order >=S$50 gross with actual customer-origin payment; unlock only after successful completion and dispute clearance. Cap 15 qualifying referrals per referrer.
+#### Scenario: Qualification
+- **WHEN** referee funds first qualifying order with actual customer payment
+- **THEN** pending reward recorded once and not spendable until clearance
+#### Scenario: Cancelled order
+- **WHEN** qualifying order cancelled or invalid
+- **THEN** reward not unlocked; legitimate later qualification evaluated under approved rules
+#### Scenario: Cap
+- **WHEN** sixteenth referee qualifies
+- **THEN** no sixteenth grant
+#### Scenario: Fully promotional order
+- **WHEN** order paid only by promotions
+- **THEN** no new referrer reward
 
 ### Requirement: REF-002 Referral communication
-The system SHALL send deduplicated success notification after confirmed grant.
-
+The system SHALL send deduplicated accurate pending/unlocked notifications.
 #### Scenario: Grant fails
 - **WHEN** reward unsuccessful
-- **THEN** no success email
+- **THEN** no success notification
 
 ### Requirement: REF-003 Registration grant and expiry
-The system SHALL grant eligible registration credit once separately from referrer award and enforce configurable qualifying threshold, expiry and approved abuse controls.
-
-#### Scenario: Registration replay
-- **WHEN** registration event repeats
-- **THEN** at most one S$10 referee credit
-
+The system SHALL issue eligible registration discount once and enforce 180-day expiry per issued grant and approved anti-abuse rules.
+#### Scenario: Replay
+- **WHEN** registration repeats
+- **THEN** at most one S$10 grant
 #### Scenario: Expired
-- **WHEN** credit expires
-- **THEN** cannot fund new purchase
-
-#### Scenario: Below threshold
-- **WHEN** order below qualifying threshold
-- **THEN** no referrer reward for that order
+- **WHEN** grant expires
+- **THEN** unavailable for new purchase
 
 ### Requirement: REF-004 Referral redemption minimum
-The system SHALL permit redemption of a S$10 referral credit only against an eligible order with agreed gross total of at least S$50. Stacking and permitted remaining tender are subject to approved wallet rules.
+The system SHALL permit stacking eligible promotional discounts up to gross on orders >=S$50; no fixed cash co-pay for redemption, subject to valid provider minimum and approved subsidy funding. No cash conversion.
+#### Scenario: Below threshold
+- **WHEN** gross S$49.99
+- **THEN** redemption denied
+#### Scenario: Full stacking
+- **WHEN** S$50 order uses five eligible S$10 grants and sufficient platform funding
+- **THEN** no shopper collection, S$45.50 seller cash obligation funded by platform
+#### Scenario: Concurrency
+- **WHEN** two checkouts reserve same S$10 grant
+- **THEN** no more than S$10 reserved
 
-#### Scenario: Below redemption minimum
-- **WHEN** a shopper attempts to redeem S$10 referral credit against S$49.99
-- **THEN** redemption is denied without debiting credit
-
-#### Scenario: Boundary
-- **WHEN** a shopper applies a valid S$10 referral credit to an eligible S$50 order
-- **THEN** value threshold passes and S$40 remains due in permitted tender, subject to other approved rules
+### Requirement: REF-005 Committed campaign budget
+The system SHALL reserve promised promotional face value atomically within approved cumulative S$500 tranches; pause new enrolment at boundary, honour existing obligations, no autonomous increase.
+#### Scenario: First tranche
+- **WHEN** 25 pairs have S$20 each committed
+- **THEN** next pair blocked until approved tranche expansion
+#### Scenario: Existing promise
+- **WHEN** campaign paused and admitted reward becomes eligible
+- **THEN** existing legitimate commitment honoured once

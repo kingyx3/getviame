@@ -1,12 +1,8 @@
 # Tasks (all blocked pending approval)
-
-- [ ] 1.1 Resolve applicable decisions, compliance and cost gates; record approved revision
-- [ ] 1.2 Validate OpenSpec artifacts and dependencies
+- [ ] 1.1 Resolve classification, promotion subsidy and budget gates, record revision
+- [ ] 1.2 Validate OpenSpec and R-006 integration
 - [ ] 2.1 Design featured rank/override and clone privacy tests
-- [ ] 2.2 Approve credit classification, threshold, cash co-pay and abuse rules
-- [ ] 2.3 Design registration/qualification, expiry, cap, replay and reversal tests
+- [ ] 2.2 Test registration/qualification/pending unlock, expiry, cap 15, cancellation/replay, abuse and budget pause at S$500
+- [ ] 2.3 Test S$49.99/S$50 boundary, full stacking, atomic reserve, mixed tender restoration, zero cash conversion, minimum external payment handling and full subsidy backing
 - [ ] 3.1 Run requirement-linked acceptance, regression and negative tests
-- [ ] 3.2 Independently verify behavior, security, cost and metrics evidence
-- [ ] 3.3 Obtain acceptance; archive/sync only after all gates pass
-
-- [ ] 4.1 Test REF-004 S$49.99/S$50, restricted source and no double redemption; confirm stacking and qualification
+- [ ] 3.2 Independent verification and approval; archive only after gates pass
