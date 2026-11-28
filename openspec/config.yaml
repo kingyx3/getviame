@@ -1,12 +1,12 @@
 schema: spec-driven
 context: |
   GetViaMe: cross-border traveller-powered shopping marketplace, Singapore-first, worldwide sourcing, future global corridors.
-  Read AGENTS.md, docs/product/brief.md, owner-answers-v0.11.md (and supersession history), wallet-policy.md, direct-charge-acceptance-v0.11.md, decisions.md, roadmap.md, domain-model.md, metrics.md (under docs/product), docs/engineering/architecture.md and agent-operations.md.
+  Read AGENTS.md, docs/product/brief.md, owner-answers-v0.12.md (and supersession history), wallet-policy.md, direct-charge-acceptance-v0.11.md, decisions.md, roadmap.md, domain-model.md, metrics.md (under docs/product), docs/engineering/architecture.md and agent-operations.md.
   Google-only auth, PWA, GCP Singapore, dev/stg/prod GHA, aggregate initial infrastructure under S$50/month.
   Inclusive max(S$1, 9% gross half-up), S$10 minimum total job, SGD-only contract/payment/payout, no Stripe FX, MSRP optional and indicative.
-  Sequential 7-day confirmation + 7-day dispute, 30-day acceptance-to-delivery max; valid traveller purchase-receipt-triggered 20% shopper penalty inclusive fee; Stripe Connect direct charges selected for design, Stripe-managed pricing/risk preferred if eligible, PayNow-first proposed; original-tender refunds, no customer-money or earnings wallet; exclusive platform payout control, mandatory platform-initiated refunds and independently funded shortfalls, weekly eligible cash payouts, refund and fresh funding on replacement (no funded rematch); platform-funded referral discounts stack on gross >=S$50, off until approved. Card auth deferred.
-  Detailed specs remain draft; no feature implementation authorized by v0.11.
-  Existing minimal Node HTTP shell: npm start, npm test, npm run check.
+  Sequential 7-day confirmation + 7-day dispute, 30-day acceptance-to-delivery max; valid traveller purchase-receipt-triggered 20% shopper penalty inclusive fee; Stripe Connect direct charges selected for design, Stripe-managed pricing/risk preferred if eligible, PayNow-only MVP; original-tender refunds, no customer-money or earnings wallet; exclusive platform payout control, mandatory platform-initiated refunds and independently funded shortfalls, weekly eligible cash payouts, refund and fresh funding on replacement (no funded rematch); platform-funded referral discounts stack on gross >=S$50, off until approved. Card auth deferred.
+  Detailed specs remain draft; no feature implementation authorized by v0.12.
+  Guest browse, lawful SG individual eligibility, 48h offer default, reviewed catalogue, transaction handover code, 14-day blind reviews, 5-order rate sample, consent amendments, cancellation notice + 7-day challenge, safe account lifecycle and controlled pilot per v0.12.\n  Existing minimal Node HTTP shell: npm start, npm test, npm run check.
   Current behavior openspec/specs/; proposed changes openspec/changes/. Public repo: no PII, secrets or receipts.
 rules:
   proposal:

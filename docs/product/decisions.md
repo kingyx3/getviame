@@ -1,6 +1,6 @@
-# Decision register v0.11 — payment-reconciled draft
+# Decision register v0.12 — comprehensive reconciliation draft
 
-Owner evidence through owner-answers-v0.11.md. Later explicit decisions prevail; historical records unchanged. Confirmed directions constrain specs; PR remains draft, no implementation approved. External clearance independent.
+Owner evidence through owner-answers-v0.12.md. Later explicit decisions prevail; historical records unchanged. Confirmed directions constrain specs; PR #2 merged into main; v0.12 specification PR for review, no implementation approved. External clearance independent.
 
 | ID | Status | Resolution / remaining question |
 | --- | --- | --- |
@@ -26,4 +26,7 @@ Owner evidence through owner-answers-v0.11.md. Later explicit decisions prevail;
 | E-001 | Provisional | Minimal runtime unchanged |
 | E-002 | Confirmed | Same repo and environment-bound GHA, no live deployment authorized |
 
-Remaining payment gates: written Stripe contract/technical approval and SG counsel opinion; exact direct-charge account configuration, pricing and reserve; all mandatory payout/refund/lifecycle/shortfall/late-refund tests; approved payment and promotional terms, rounding/expiry/exception details. Q122 payment method exclusivity and Q124 future reauthorisation not explicitly approved. Future card auth on offer selection/capture at valid purchase receipt deferred. No new financial or production authority.
+Remaining payment gates: written Stripe contract/technical approval and SG counsel opinion; exact direct-charge account configuration, pricing and reserve; all mandatory payout/refund/lifecycle/shortfall/late-refund tests; approved payment and promotional terms, rounding/expiry/exception details. Q148 confirms PayNow-only MVP; Q124 future reauthorisation remains deferred and unapproved. Future card auth on offer selection/capture at valid purchase receipt deferred. No new financial or production authority.
+
+## v0.12 approved direction (Q127–205)
+Detailed decision evidence: owner-answers-v0.12.md; use it to interpret all previous rows. D-006/007: inclusive pricing, platform ordinary account/payout costs, consent-based amendments with verified additional funding/refund, original deadline, S$500 exception review. D-008/009: code/manual or sufficient evidence, cancellation notice + challenge, timely dispute from funding, one appeal and service targets. D-010/013/015: PayNow only, mandatory AC unchanged, independent reserve/exposure, lawful recovery, no instant payout; provider and counsel remain blocked. D-011/012: allowlist/category review, lawful SG individual eligibility, catalogue provenance/corrections, authenticity. D-014: earliest-expiry redemption, pending issue on unlock, grace restoration and non-recycling. D-016/020: 14-day reviews, 5-order sample, guest browse, risk-based KYC, lifecycle/reporting. D-005/018–021: controlled pilot, cost accounting and safety/ops; material thresholds, actual tax/contract terms, provider fallbacks, legal clearance, approved cost forecast and launch cohort still required. No implementation, spending or release approval inferred.
