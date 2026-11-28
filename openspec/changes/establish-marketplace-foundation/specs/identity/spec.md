@@ -32,3 +32,19 @@ The system SHALL provide installable responsive PWA and require approved 18+ par
 #### Scenario: Offline mutation
 - **WHEN** the user attempts a funded-order action offline
 - **THEN** it is not shown as complete or queued for unsafe replay
+
+
+### Requirement: ID-004 Guest and eligible participation
+The system SHALL allow public non-sensitive browsing, require authentication for actions, enforce one person/account with risk-based duplicate detection, shopper checks where risk/provider requires and verified SG traveller KYC and lawful work eligibility; commercial sellers separately reviewed.
+
+#### Scenario: Guest
+- **WHEN** unauthenticated visitor browses
+- **THEN** only public product/quantity/region/budget/deadline visible, no mutation or private contacts
+
+#### Scenario: Ineligible
+- **WHEN** traveller lacks provider or lawful eligibility
+- **THEN** no paid commitment
+
+#### Scenario: Duplicate
+- **WHEN** credible duplicate identity detected
+- **THEN** review without duplicate entitlements

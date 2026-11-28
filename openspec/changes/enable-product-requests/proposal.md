@@ -1,6 +1,6 @@
 # Enable product catalogue and shopper requests
 
-Status: DRAFT / NOT APPROVED FOR IMPLEMENTATION. Owner direction v0.2, remaining gates in docs/product/decisions.md.
+Status: DRAFT / NOT APPROVED FOR IMPLEMENTATION. Owner direction v0.12, remaining gates in docs/product/decisions.md.
 
 ## Why
 Enable product catalogue and shopper requests supports the marketplace direction.
@@ -12,6 +12,8 @@ R-003; D-003/004/006/011/012. No live food/controlled goods before clearance.
 ### New Capabilities
 - `product-catalogue`: product catalogue
 - `shopper-requests`: shopper requests
+- `marketplace-policy`: marketplace policy
+
 ### Modified Capabilities
 None.
 

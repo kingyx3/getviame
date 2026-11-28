@@ -24,3 +24,15 @@ The system SHALL recommend grouped purchases with independent orders.
 #### Scenario: Similar jobs
 - **WHEN** several requests match one product/trip
 - **THEN** traveller can consider them together without combined payment
+
+
+### Requirement: TRIP-004 Trip changes
+The system SHALL recompute affected matches and notify without cancelling funded obligations; no capacity input.
+
+#### Scenario: Trip cancelled
+- **WHEN** funded order linked
+- **THEN** alert and route to proper reschedule/cancel
+
+#### Scenario: Unfunded
+- **WHEN** trip date changes
+- **THEN** recompute compatibility

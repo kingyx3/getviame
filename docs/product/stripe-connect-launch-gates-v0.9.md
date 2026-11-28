@@ -1,4 +1,6 @@
 # Stripe Connect launch gates and validation — 2026-11-28
+> Historical research: current founder-approved direct-charge, no funded rematch and PayNow-only MVP requirements are in owner-answers-v0.12.md and direct-charge-acceptance-v0.11.md (including AC-18–24). Do not implement SCT or rematching based on this document.
+
 Status: public-document diligence complete for findings below; actual provider approval, Singapore legal clearance, negotiated pricing and sandbox verification BLOCKED. Founder approved Stripe selection in owner-answers-v0.9.md, not a particular charge topology or spend. Draft PR #2; baseline df8d30703d284b67f8a086a51816bc4321b0af01. No customer wallet. This document supersedes historical alternative-provider recommendations.
 ## Verified public capability and limitations
 - MAS FID lists Stripe Payments Singapore Pte Ltd as MPI for account issuance, domestic/cross-border transfer, merchant acquisition and e-money issuance: https://eservices.mas.gov.sg/fid/institution/detail/219107-STRIPE-PAYMENTS-SINGAPORE-PTE-LTD . Stripe SG disclosure states relevant money safeguarded in pooled trust accounts with Singapore banks; default payout speed T+7 calendar days. Identify whose relevant money and contractual entitlement; not proof of shopper trust or per-order isolation: https://stripe.com/en-sg/legal/singapore-disclosures .

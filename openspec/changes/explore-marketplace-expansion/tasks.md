@@ -10,3 +10,5 @@
 - [ ] 3.3 Obtain acceptance; archive/sync only after all gates pass
 
 - [ ] 4.1 Assess recurrence demand and propose separate schedule, cancellation, availability and payment consent rules
+
+- [ ] 4.2 Split each selected expansion into its own approved OpenSpec change, with no overlapping capability implementation or automatic authorisation.

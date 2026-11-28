@@ -9,3 +9,6 @@
 - [ ] 3.3 Obtain acceptance; archive/sync only after all gates pass
 
 - [ ] 4.1 Test OFR-004 advance requests, 30-day boundary, revised dates and provider limits
+
+- [ ] 4.2 Map every new/changed requirement and scenario to executable positive, negative, boundary and concurrency tests, including marketplace-messaging.
+- [ ] 4.3 Review applicable security/privacy, policy, cost and external dependencies; record approved targets and independently validate evidence before acceptance.
